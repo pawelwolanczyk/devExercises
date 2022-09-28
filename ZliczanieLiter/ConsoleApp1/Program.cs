@@ -1,17 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media;
+using System.Drawing;
+
 
 class Program
-{ 
+{
     static void Main(string[] args)
     {
+        Color x;
+        Color y;
         List<string> list = new List<string>();
         Console.WriteLine("Podaj napis:");
-       
+
         //Console.WriteLine("Użytkowniku podaj kolor liter (czarny niebieski, zielony):");
         // string kolorString = Console.ReadLine();
         //ConsoleColor kolorEnum = ConsoleColor.DarkCyan;
-       
+
         string expression = Console.ReadLine();
         //expression.ToCharArray();
         int liczbaliter;
@@ -22,14 +27,14 @@ class Program
         bool przeprocesowane = false;
         Console.BackgroundColor = ConsoleColor.Magenta;
         Console.ForegroundColor = (ConsoleColor)30;
-        while ( i < dlugosc)
+        while (i < dlugosc)
         {
             liczbaliter = 1;
             for (int k = 0; k < expression.Length; k++)
             {
                 if (expression[i] == past[k])
                 {
-                    przeprocesowane=true;
+                    przeprocesowane = true;
                     break;
                 }
             }
@@ -56,9 +61,9 @@ class Program
             Console.Write(": " + liczbaliter + ", ");
             past[i] = expression[i];
             i++;
-            
+
         }
-          
+
         //for (int i = 0; i < expression.Length; i++)
         //{
         //    for (int j = i + 1; expression[i] == expression[j]; j++)
