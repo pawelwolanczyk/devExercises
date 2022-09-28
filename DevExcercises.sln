@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrzewkoPawla", "signs_tree\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program-Sortuj", "sorting\Program-Sortuj.csproj", "{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "letters1", "letters1\letters1.csproj", "{F315E1E4-D6D7-4FF4-BA34-B35CA83E5E3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZliczanieLiter", "ZliczanieLiter\ZliczanieLiter.csproj", "{00140906-45E2-4D3F-9854-876E7EEA9ADD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F315E1E4-D6D7-4FF4-BA34-B35CA83E5E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F315E1E4-D6D7-4FF4-BA34-B35CA83E5E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F315E1E4-D6D7-4FF4-BA34-B35CA83E5E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F315E1E4-D6D7-4FF4-BA34-B35CA83E5E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00140906-45E2-4D3F-9854-876E7EEA9ADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00140906-45E2-4D3F-9854-876E7EEA9ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00140906-45E2-4D3F-9854-876E7EEA9ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00140906-45E2-4D3F-9854-876E7EEA9ADD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
