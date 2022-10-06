@@ -52,24 +52,3 @@ namespace Total
         }
     }
 }
-
-//for (int i = 0; i >= 0; i++)
-//{
-//    Console.WriteLine("Podaj kolejną liczbę: ");
-//    double number2;
-//    bool resParse2;
-//    //double wynik = number1;
-//    string[] s = new string[] {Console.ReadLine()};
-//    resParse2 = double.TryParse(args[], out number2);
-//    if (resParse2 == true)
-//    {
-//        number1 += number2;
-//        i++;
-//    }
-//    else
-//    {
-//        //char q = Convert.ToChar(Console.ReadLine());
-//        //if ()
-//        Console.WriteLine("Suma: " + number1);
-//    }
-//}
