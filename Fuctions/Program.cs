@@ -34,31 +34,28 @@ namespace Functios
             {
                 Console.WriteLine(name + " oszukujesz, zamykam się i nie gadam z Tobą!");
             }
-            void Tree(int p, char f)
-            {
-                string str = "";
-                int high = ((p + 1) / 2);
-
-                for (int i = 0; i < high; i++)
-                {
-                    int spacja = high - i;
-
-                    for (int j = 0; j < spacja; j++)
-                    {
-                        str += " ";
-                    }
-                    for (int k = 0; k < (2 * i) + 1; k++)
-                    {
-                        str += f;
-                    }
-                    str += "\n";
-                }
-                Console.WriteLine(str);
-                Console.ReadKey();
-            }
         }
+        static void Tree(int p, char f)
+        {
+            string str = "";
+            int high = ((p + 1) / 2);
 
+            for (int i = 0; i < high; i++)
+            {
+                int spacja = high - i;
+
+                for (int j = 0; j < spacja; j++)
+                {
+                    str += " ";
+                }
+                for (int k = 0; k < (2 * i) + 1; k++)
+                {
+                    str += f;
+                }
+                str += "\n";
+            }
+            Console.WriteLine(str);
+            Console.ReadKey();
+        }
     }
-    
-
 }
