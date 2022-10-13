@@ -19,6 +19,7 @@ namespace LazySalesmanJoanna
             double[] banknots = new double[] { 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
 
             Rest(moneys, money);
+
             Console.WriteLine("\n Czy są Państwo zadowoleni z obsługi?");
             string answear = Console.ReadLine();
             if (answear == "tak")
@@ -39,9 +40,9 @@ namespace LazySalesmanJoanna
         }
         static void Rest(double[] n, double m)
         {
+            int[] rest = new int[n.Length];
             for (int i = 0; i < n.Length; i++)
             {
-                int[] rest = new int[n.Length];
                 double other;
                 rest[i] = Convert.ToInt32(Math.Floor(m / n[i]));
                 Console.Write(" " + n[i] + "zł:" + " " + rest[i]);
