@@ -17,11 +17,11 @@ namespace HappyClerk
         Console.WriteLine("Dzień dobry. Polecam batoniki.");
         Console.Write("Pański rachunek wynosi (podaj kwotę): ");
         bool badNomi = false;
-        float bill = float.Parse(Console.ReadLine());
+        decimal bill = decimal.Parse(Console.ReadLine());
         NomiInput:
             Console.WriteLine("Podaj nominał jakim zapłacisz (10, 20, 50, 100, 200,500: ");
             int[] banknote = { 10, 20, 50, 100, 200, 500 };
-            float nomi = float.Parse(Console.ReadLine());
+            decimal nomi = decimal.Parse(Console.ReadLine());
 
             //for (int i = 0; i < banknote.Length; i++)
             //{
@@ -47,38 +47,65 @@ namespace HappyClerk
             }
 
             
-        float rest = nomi - bill, z5, z2, z1, g50, g20, g10, g5;
+        decimal rest = nomi - bill, z5, z2, z1, g50, g20, g10, g5,g2,g1;
         Console.WriteLine(rest);
             z5 = (rest - (rest % 5)) / 5;
-            Console.WriteLine("5 x " + z5);
-
+            rest = rest - (z5 * 5);
+            Console.WriteLine(rest);
+            z2 = (rest - (rest % 2)) / 2;
+            rest = rest - (z2 * 2);
+            Console.WriteLine(rest);
+            z1 = (rest - (rest % 1)) / 1;
+            rest = rest - (z1 * 1);
+            rest = rest * 100;
+            Console.WriteLine(rest);
+            g50 = (rest - (rest % 50)) / 50;
+            rest = rest - (g50 * 50);
+            Console.WriteLine(rest);
+            g20 = (rest - (rest % 20)) / 20;
+            rest = rest - (g20 * 20);
+            Console.WriteLine(rest);
+            g10 = (rest - (rest % 10)) / 10;
+            rest = rest - (g10 * 10);
+            Console.WriteLine(rest);
+            g5 = (rest - (rest % 5)) / 5;
+            rest = rest - (g5 * 5);
+            Console.WriteLine(rest);
+            g2 = (rest - (rest % 2)) / 2;
+            rest = rest - (g2 * 2);
+            Console.WriteLine(rest);
+            if (rest == 1) 
+                g1 = 1;
+            else
+                g1 = 0;
+            
 
             int z500, z200, z100, z50, z20, z10;
 
 
+
         Console.WriteLine("Wydaję resztę: ");
         Console.WriteLine("5zł - " + z5 + "szt.");
-        Console.WriteLine("Wydaję resztę: ");
-        Console.WriteLine("2zł - " + z5 + "szt.");
-        Console.WriteLine("Wydaję resztę: ");
-        Console.WriteLine("1zł - " + z5 + "szt.");
-        Console.WriteLine("Wydaję resztę: ");
-        Console.WriteLine("50gr - " + z5 + "szt.");
-        Console.WriteLine("Wydaję resztę: ");
-        Console.WriteLine("20gr - " + z5 + "szt.");
+        Console.WriteLine("2zł - " + z2 + "szt.");
+        Console.WriteLine("1zł - " + z1 + "szt.");
+        Console.WriteLine("50gr - " + g50 + "szt.");
+        Console.WriteLine("20gr - " + g20 + "szt.");
+        Console.WriteLine("10gr - " + g10 + "szt.");
+        Console.WriteLine("5gr - " + g5 + "szt.");
+        Console.WriteLine("2gr - " + g2 + "szt.");
+        Console.WriteLine("1gr - " + g1 + "szt.");
+
+
+            //static void moneta(float monet, float restFun, );
+            //    {
+            //            monet = (restFun - (restFun % 5)) / 5;
+
+
+            //    }
 
 
 
-    static void moneta(float monet, float restFun, );
-        {
-                monet = (restFun - (restFun % 5)) / 5;
-
-
-        }
-
-
-
-        Console.ReadKey();
+            Console.ReadKey();
 
 
 
