@@ -36,11 +36,9 @@ namespace Total
                 }
                 else
                     Console.WriteLine("Nie rozumiem polecenia!");
-                Console.ReadKey();
             }
             else
                 Console.WriteLine("Nie rozumiem polecenia!");
-            Console.ReadKey();
         }
         //static void Main(string[] args)
         //{
