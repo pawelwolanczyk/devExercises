@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figury", "Figury\Figury.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsLibrary", "UtilsLibrary\UtilsLibrary.csproj", "{39E084FB-3176-4A51-8CFF-FC2D14DC1B10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazySalesmanJoanna", "LazySalesmanJoanna\LazySalesmanJoanna.csproj", "{EA92A1CA-E5AC-462F-AE52-421A5C04269E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnia", "Silnia\Silnia.csproj", "{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,14 @@ Global
 		{88F94A54-426A-4929-B9A2-58E73675112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F94A54-426A-4929-B9A2-58E73675112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F94A54-426A-4929-B9A2-58E73675112E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA92A1CA-E5AC-462F-AE52-421A5C04269E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA92A1CA-E5AC-462F-AE52-421A5C04269E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA92A1CA-E5AC-462F-AE52-421A5C04269E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA92A1CA-E5AC-462F-AE52-421A5C04269E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58C920F7-3707-401A-92A4-02D5CBF05178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58C920F7-3707-401A-92A4-02D5CBF05178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C920F7-3707-401A-92A4-02D5CBF05178}.Release|Any CPU.ActiveCfg = Release|Any CPU
