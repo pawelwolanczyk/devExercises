@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58C920F7-3707-401A-92A4-02D5CBF05178}</ProjectGuid>
+    <ProjectGuid>{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Figury</RootNamespace>
-    <AssemblyName>Figury</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>DrzewkoPawlaUzycieKlas</RootNamespace>
+    <AssemblyName>DrzewkoPawlaUzycieKlas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,12 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UtilsLibrary\UtilsLibrary.csproj">
-      <Project>{39e084fb-3176-4a51-8cff-fc2d14dc1b10}</Project>
-      <Name>UtilsLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

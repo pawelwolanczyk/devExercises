@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrzewkoPawla", "signs_tree\DrzewkoPawla.csproj", "{5F1FA43C-7238-4645-822E-7A633D17245A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program-Sortuj", "sorting\Program-Sortuj.csproj", "{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZliczanieLiter", "ZliczanieLiter\ZliczanieLiter.csproj", "{00140906-45E2-4D3F-9854-876E7EEA9ADD}"
@@ -21,16 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazySalesmanJoanna", "LazyS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnia", "Silnia\Silnia.csproj", "{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrzewkoPawlaUzycieKlas", "DrzewkoPawlaUzycieKlas\DrzewkoPawlaUzycieKlas.csproj", "{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F1FA43C-7238-4645-822E-7A633D17245A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F1FA43C-7238-4645-822E-7A633D17245A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F1FA43C-7238-4645-822E-7A633D17245A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F1FA43C-7238-4645-822E-7A633D17245A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A6D9B0-E232-4D43-AAB9-C3E93103A946}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

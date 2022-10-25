@@ -10,10 +10,6 @@ class Program
         List<int> lista = new List<int>();
         for (int a = 0; a < args.Length - 1; a++)
         {
-            //string s = args[a];
-            //int x = int.Parse(s);
-            //array[a] = x;
-            //args[a] = Console.ReadLine();
             lista.Add(int.Parse(args[a]));
         }
         bool ascending = args[args.Length - 1] == "ascending";
@@ -55,16 +51,3 @@ class Program
         }
     }
 }
-//(args.GetLength(int.Parse(Console.ReadLine());
-//int[] array = new int[/*args.Length - 1*/] { args.Length - 1/*int.Parse(Console.ReadLine()) */};
-//int a = 0;
-//args[a] = Console.ReadLine();
-//; for (int a = 0; a < args.Length - 1; a++)
-//{
-//    //string s = args[a];
-//    //int x = int.Parse(s);
-//    //array[a] = x;
-//    array[a] = int.Parse(args[a]);
-//}
-//bool ascending = args[args.Length - 1] == "ascending";
-//bool descending = args[args.Length - 1] == "descending";
