@@ -1,43 +1,42 @@
-CREATE TABLE [dbo].[Deski](
-	[DeskiID] [int] IDENTITY(1,1) NOT NULL,
-	[Producent] [nvarchar](20) NULL,
-	[Model] [nvarchar](60) NULL,
-	[Waga] [tinyint] NULL,
-	[Cena] [float] NULL,
-	[Opinie] [varchar](50) NULL,
- CONSTRAINT [pk_Deski_DeskiID] PRIMARY KEY (DeskiID)
- )
-GO
-
-
-CREATE TABLE [dbo].[Okladziny](
-	[OkladzinyID] [int] IDENTITY(1,1) NOT NULL,
-	[Producent] [nvarchar](max) NULL,
-	[Model] [nvarchar](max) NULL,
-	[Grubosc] [float] NULL,
-	[Waga] [decimal](18, 0) NULL,
-	[Cena] [float] NULL,
-	[Kolor] [nvarchar](max) NULL,
- CONSTRAINT [pk_Okladziny_OkladzinyID] PRIMARY KEY (OkladzinyID) 
+CREATE TABLE Blades(
+	BladeID int IDENTITY(1,1) NOT NULL,
+	Manufacturer nvarchar(50) NULL,
+	Name nvarchar(100) NULL,
+	Weight tinyint NULL,
+	Price float NULL,
+	Reviews varchar(max) NULL,
+ CONSTRAINT pk_Blades_BladeID PRIMARY KEY (BladeID)
 )
-GO
 
+CREATE TABLE Rubbers(
+	RubberID int IDENTITY(1,1) NOT NULL,
+	Manufacturer nvarchar(50) NULL,
+	Name nvarchar(100) NULL,
+	Thickness float NULL,
+	Weight tinyint NULL,
+	Price float NULL,
+	Color nvarchar(20) NULL,
+ CONSTRAINT pk_Rubbers_RubberID PRIMARY KEY (RubberID) 
+)
 
-CREATE TABLE [dbo].[Pileczki](
-	[Rodzaj] [varchar](20) NULL,
-	[Producent] [varchar](20) NULL,
-	[Model] [varchar](20) NULL,
-	[Cena] [varchar](10) NULL
+CREATE TABLE Balls(
+	BallID int IDENTITY(1,1) NOT NULL,
+	Type varchar(20) NULL,
+	Manufacturer varchar(50) NULL,
+	Name nvarchar(100) NULL,
+	Price float NULL,
+ CONSTRAINT pk_Balls_BallID PRIMARY KEY (BallID) 
 ) 
-GO
 
-
-CREATE TABLE [dbo].[Zestawy](
-	[ZestawyID] [int] IDENTITY(1,1) NOT NULL,
-	[Nazwa] [nvarchar](30) NULL,
-	[Opis] [nvarchar](100) NULL,
-	[Okladzina1ID] [int] NULL,
-	[Okladzina2ID] [int] NULL,
-	[DeskaID] [int] NULL,
- CONSTRAINT [pk_Zestawy_ZestawyID] PRIMARY KEY (ZestawyID) 
+CREATE TABLE Bats(
+	BatID [int] IDENTITY(1,1) NOT NULL,
+	Name nvarchar(50) NULL,
+	Description nvarchar(300) NULL,
+	Rubber1ID int NOT NULL,
+	Rubber2ID int NOT NULL,
+	BladeID int NOT NULL,
+ CONSTRAINT pk_Bats_BatID PRIMARY KEY (BatID),
+ CONSTRAINT fk_Rubbers_Rubber1ID FOREIGN KEY (Rubber1ID) REFERENCES Rubbers(RubberID),
+ CONSTRAINT fk_Rubbers_Rubber2ID FOREIGN KEY (Rubber2ID) REFERENCES Rubbers(RubberID),
+ CONSTRAINT fk_Blades_BladeID FOREIGN KEY (BladeID) REFERENCES Blades(BladeID)
 )
