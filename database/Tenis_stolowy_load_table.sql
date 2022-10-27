@@ -7,6 +7,11 @@ INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Donic', 'Extensi
 INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Donic', 'Persson OFF+', 85, 298)
 INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Donic', 'Epox Top Speed', 70, 128)
 INSERT INTO Blades VALUES ('Donic', 'Dyjas Ultra Power', 72, 148, NULL)
+INSERT INTO Blades VALUES ('Tibhar', 'Nimbus off', 86, 120, NULL)
+INSERT INTO Blades VALUES ('Nittaku', 'Hino Blade 7.22', 83, 598, NULL)
+INSERT INTO Blades VALUES ('Nittaku', 'Tenaly Original', 85, 310, NULL)
+INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Dr. Neubauer', 'Hercules', 85, 560)
+INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Dr. Neubauer', 'Kung Fu', 70, 250)
 
 INSERT INTO Rubbers VALUES ('Butterfly', 'Rozena', 2.1, 90, 450, 'Black')
 INSERT INTO Rubbers VALUES ('Butterfly', 'Rozena', 1.9, 85, 450, 'Red')
@@ -47,6 +52,21 @@ INSERT INTO Rubbers VALUES ('Butterfly', 'Dignics 80', 1.9, 88, 365, 'Red')
 INSERT INTO Rubbers VALUES ('Butterfly', 'Dignics 80', 2.0, 89, 365, 'Black')
 INSERT INTO Rubbers VALUES ('Butterfly', 'Dignics 80', 2.1, 90, 365, 'Red')
 INSERT INTO Rubbers (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Andro', 'Hexer', 1.8, 80, 130, 'Red')
+INSERT INTO Rubbers VALUES ('Yasaka', 'Rakza7', 2.0, 88, 160, 'Black')
+INSERT INTO Rubbers VALUES ('Yasaka', 'Rakza9', 1.8, 88, 180, 'Black')
+INSERT INTO Rubbers VALUES ('Yasaka', 'RISING DRAGON', 2.1,89, 170, 'Red')
+INSERT INTO Rubbers (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Tibhar', 'Evolution EL-D', 2.0, 87, 210, 'Black')
+INSERT INTO Rubbers (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Joola', 'Rhyzen Fire', 2.1, 82, 255, 'Black')
+INSERT INTO Rubbers (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Victas', 'V>22 Double Extra', 2.0, 84, 265, 'Blue')
+INSERT INTO Rubbers VALUES ('Joola', 'Rhyzen Fire Blue', 2.1, 82, 255, 'Blue')
+INSERT INTO Rubbers VALUES ('Tibhar', 'Hybrid K3', 2.0, 87, 265, 'Black')
+INSERT INTO Rubbers VALUES ('Mizuno', 'Q3', 1.9, 83, 270, 'Red')
+INSERT INTO Rubbers VALUES ('Mizuno', 'Q5', 1.9, 84, 295, 'Red')
+
+INSERT INTO Balls VALUES ('Plastik','Tibhar', 'Outdoor', 49)
+INSERT INTO Balls VALUES ('Plastik', 'Joola', '*** Advanced Training 40+ ', 29)
+INSERT INTO Balls (Type, Manufacturer, Name, Price) VALUES ('Caluloid', 'Tibhar', 'JPS Japan ***', 36)
+
 
 INSERT INTO Bats (Name, Description, Rubber1ID, Rubber2ID, BladeID)
 SELECT 'Donic + Butterfly Offensive', 'Bardzo szybki zestaw', 
