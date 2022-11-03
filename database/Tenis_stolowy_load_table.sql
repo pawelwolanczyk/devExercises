@@ -80,3 +80,29 @@ SELECT 'Andro + Butterfly Control', 'Wolny zestaw dla początkujących',
 (SELECT RubberID FROM Rubbers WHERE Name = 'Rozena' AND Color = 'Black'), 
 (SELECT BladeID FROM Blades WHERE Manufacturer = 'Donic' AND Name = 'Extension OC')
 
+INSERT INTO RUBBERS VALUES ('Nittaku', 'Magic Carbon', 1.8, 88, 350, 'Red')
+INSERT INTO RUBBERS VALUES ('SpinLord', 'Gigant', 1.2, 89, 124, 'Red')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Nittaku', 'Best Anti', 1.6, 87, 165, 'Black')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Dr. Neubauer', 'Rhino Plus', 1.4, 87, 320, 'Black')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Feint', 'Long III', 1.2, 85, 145, 'Red')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Dr. Neubauer', 'Power Attack', 1.9, 86, 180, 'Red')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Friendship', 'RITC 804 HQS', 1.7, 88, 250, 'Red')
+INSERT INTO RUBBERS (Manufacturer, Name, Thickness, Weight, Price, Color) VALUES ('Dr. Neubauer', 'ABS 2', 1.5, 86, 195, 'Black')
+INSERT INTO RUBBERS VALUES ('Roundell', 'Soft', 1.8, 88, 175, 'Red')
+INSERT INTO RUBBERS VALUES ('Roundell', 'Hard', 2.1, 89, 250, 'Black')
+
+INSERT INTO Blades VALUES ('Xiom', 'Allroun S', 85, 195, NULL)
+INSERT INTO Blades VALUES ('Victas', 'Euro Classic', 72, 132, NULL)
+INSERT INTO Blades VALUES ('Victas', 'Swat 5PW', 78, 235, NULL)
+INSERT INTO Blades VALUES ('Victas', 'Black Balsa 5.0', 75, 255, NULL)
+INSERT INTO Blades (Manufacturer, Name, Weight, Price) VALUES ('Victas', 'Award Allround Light', 80, 150)
+
+INSERT INTO Bats VALUES ('andro + Fun Level', 'Idealna dla początkujących i grających okazjonalnie w czasie wolnym', 21, 24, 3)
+INSERT INTO Bats VALUES ('Donic + Waldner 400', 'Dla łatwej gry z maksymalną kontrolą', 22, 23, 4)
+INSERT INTO Bats (Name, Description, Rubber1ID, Rubber2ID, BladeID) VALUES ('Donic + Young Champs 300', 'Rakieta hobby', 26, 27, 6)
+INSERT INTO Bats VALUES ('Donic + Ovtcharov 900', 'Klasyczna rakietka', 28, 31, 8)
+INSERT INTO Bats VALUES ('Donic + Waldner 900', 'Ta rakieta hobbystyczna umożliwia trudną grę z optymalną rotacją i stosunkowo dużą prędkością', 33, 35, 10)
+
+INSERT INTO Balls (Type, Manufacturer, Name, Price) VALUES ('Plastik', 'Nittaku', '** 40+ Cell-Free', 46)
+INSERT INTO Balls (Type, Manufacturer, Name, Price) VALUES ('Caluloid', 'Joola', 'Spinball 12', 35)
+INSERT INTO Balls (Type, Manufacturer, Name, Price) VALUES ('Plastik', 'Victas', '*** VP40+', 48)
