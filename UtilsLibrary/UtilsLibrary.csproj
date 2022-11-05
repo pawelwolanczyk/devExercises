@@ -46,6 +46,7 @@
     <Compile Include="Containers\ListItem.cs" />
     <Compile Include="Containers\SortedIntList.cs" />
     <Compile Include="Geometry\Rectangle.cs" />
+    <Compile Include="PabloTree\TreePabloUseClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
