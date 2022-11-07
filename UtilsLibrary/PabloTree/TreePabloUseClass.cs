@@ -8,28 +8,26 @@ namespace UtilsLibrary.PabloTree
 {
     public class TreePabloUseClass
     {
-        private static string name;
-        private char e;
-
         public TreePabloUseClass()
         {
 
-        }
-        public string NameProperty
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        public char EProperty
-        {
-            get { return e; }
-            set { e = value; }
         }
         public void PrintName()
         {
             Console.WriteLine("Jak masz na imię? ");
         }
-
+        private static string name;
+        public string NameProperty
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        private char e;
+        public char EProperty
+        {
+            get { return e; }
+            set { e = value; }
+        }
         public static void PrintCommunication()
         {
             Console.WriteLine( name + " oszukujesz, zamykam się i nie gadam z Tobą!");
