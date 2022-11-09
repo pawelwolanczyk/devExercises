@@ -12,31 +12,42 @@ namespace LazySalesmanJoanna
         static void Main(string[] args)
         {
             string[] tab = new string[] {};
-            int banknot = int.Parse(args[0]);
-            double value = double.Parse(args[1]);
-            double money = banknot - value;
-            double[] moneys = new double[] { 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
-            double[] banknots = new double[] { 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
-
-            Rest(moneys, money);
-
-            Console.WriteLine("\n Czy są Państwo zadowoleni z obsługi?");
-            string answear = Console.ReadLine();
-            if (answear == "tak")
+            Pomoc(args[0]);
+            int banknot;
+            bool kwota1, kwota2;
+            double value;
+            kwota1 = int.TryParse(args[0], out banknot);
+            Error(kwota1);
+            if (kwota1 == true)
             {
-                Console.WriteLine("Dziękujemy i zapraszamy ponownie!");
-                Console.ReadKey();
+                kwota2 = double.TryParse(args[1], out value);
+                Error(kwota2);
+                if (kwota2 == true)
+                {
+                    double money = banknot - value;
+                    double[] moneys = new double[] { 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
+                    double[] banknots = new double[] { 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
+
+                    Rest(moneys, money);
+                    Console.WriteLine("\n Czy są Państwo zadowoleni z obsługi?");
+                    string answear = Console.ReadLine();
+                    if (answear == "tak")
+                    {
+                        Console.WriteLine("Dziękujemy i zapraszamy ponownie!");
+                        Console.ReadKey();
+                    }
+                    else if (answear == "nie")
+                    {
+                        money = banknot - value;
+                        Rest(banknots, money);
+                        Console.WriteLine("\n Lepiej być nie może! Miłego dnia!");
+                        Console.ReadKey();
+                    }
+                    else
+                        Console.WriteLine("Nie rozumiem odpowiedzi, ale mam nadzieję, że jesteś zadowolony. Zapraszamy ponownie!");
+                    Console.ReadKey();
+                }
             }
-            else if (answear == "nie")
-            {
-                money = banknot - value;
-                Rest(banknots,money);
-                Console.WriteLine("\n Lepiej być nie może! Miłego dnia!");
-                Console.ReadKey();
-            }
-            else
-                Console.WriteLine("Nie rozumiem odpowiedzi, ale mam nadzieję, że jesteś zadowolony. Zapraszamy ponownie!");
-            Console.ReadKey();
         }
         static void Rest(double[] n, double m)
         {
@@ -50,6 +61,22 @@ namespace LazySalesmanJoanna
                     Console.Write("|");
                 other = rest[i] * n[i];
                 m = m - other;
+            }
+        }
+        public static void Pomoc(string a)
+        {
+            if (a == "git help")
+            {
+                Console.WriteLine("Jako pierwszą liczbę podaj wartość banknotu, którym dokonujesz zapłaty. Jako drugą liczbę podaj " +
+                    "kwotę, którą musisz zapłacić za zakupy");
+            }
+        }
+        public static void Error(bool a)
+        {
+            if (a == false)
+            {
+                Console.WriteLine("Podałeś złe liczby. Użyj komendy git help, po więcej informacji.");
+                Console.ReadKey();
             }
         }
     }

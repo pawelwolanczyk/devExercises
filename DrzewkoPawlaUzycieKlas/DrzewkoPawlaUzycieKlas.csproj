@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58C920F7-3707-401A-92A4-02D5CBF05178}</ProjectGuid>
+    <ProjectGuid>{0955F6D5-18D8-4DFB-A79C-D85BA7A5570D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Figury</RootNamespace>
-    <AssemblyName>Figury</AssemblyName>
+    <RootNamespace>DrzewkoPawlaUzycieKlas</RootNamespace>
+    <AssemblyName>DrzewkoPawlaUzycieKlas</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
