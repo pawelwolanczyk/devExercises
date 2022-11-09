@@ -64,68 +64,7 @@ CONSTRAINT pk_Times_TimeID PRIMARY KEY (TimeID),
 CONSTRAINT uk_Times_Day_Time UNIQUE (Day_Time),
 )
 
-Normalizacja bazy danych
-Aliansy
-TRIGGER (WYZWALACZ)
-CONSTREINTS: 
-default
-not null
-primary key
-unique - unikatowoœæ (mo¿emy dodaæ dwie kolumny, oczywiœcie najlepiej dodaæ sobie CONSTRAINT I NAZWÊ)Czyli np mamy tv i tam jest UNIQUE to on nam nie pozwoli dodaæ
-jeszcze raz tego samego produkty o tym samym kodzie, tylko zrobimy UPDATE (czyli zaaktualizuje sobiê ju¿ istniej¹cy wiersz) 
-foreign key
-check-- ALTER TABLE ........... ADDD CONSTRAINT CK_... CHECK( nazwa kolumny > od czego AND nawaz kolumny = czemuœ )
 
-
-SELECT * FROM Bats, Rubbers 
-WHERE (Bats.Rubber1ID = Rubbers.RubberID OR Bats.Rubber2ID = Rubbers.RubberID) 
-AND Bats.BatID = 5
-
-SELECT Bats.Name, Bats.Description, Rubbers.Manufacturer, Rubbers.Name, Rubbers.Thickness, Rubbers....... 
-
-INNER JOIN Rubbers ON Bats.Rubber1ID = Rubbers.RubberID AND Bats.Rubber2ID = Rubbers.RubberID
-WHERE Bats.BatID = 5
-
-
-Za pomoc¹ where i INNER JOIN wyci¹gniêcie informacji o desce która jest u¿ywana w danym zestawie
-
-
-SELECT * FROM Blades
-INNER JOIN Bats ON Blades.BladeID = Bats.BladeID
-
-SELECT * FROM Blades
- LEFT INNER JOIN Bats ON Blades.BladeID = Bats.BladeID
-WHERE Bats.BatID IS NULL
-
-
-SELECT Bats.* FROM Bats --. SPRAWIA, ¯E WYŒWIETLAJ¥ nAM SIÊ TYLKO TE KOLUMNY KTÓRE POCHODZ¥ Z BATS, ALE WYKONUJE NAM CA£Y PRCES TYLKO NIE 
---WIDZIMY PRAWEJ STRONY Blades.BladeID = Bats.BladeID, Dlatego mog¹ nam siê te¿ pojawiaæ duplikaty 
-INNER JOIN Bats ON Blades.BladeID = Bats.BladeID
-
-SELECT * FROM Blades WHERE BladeID IN (SELECT BladeID FROM Bats) --To co znajduje siê w nawiasie wykinuje siê pierwsze
-SELECT * FROM Blades WHERE BladeID NOT IN (SELECT BladeID FROM Bats)
-
-Zróbmy selecta który wœwietli wszystkie ok³adziny, które nie by³y u¿yte w zestawach --PRACA DOMOWA 
-
-SELECT * FROM Rubbers WHERE RubberID BEETWEN 1 AND 10
-SELECT * FROM Rubbers WHERE RubberID BEETWEN 20 AND 30
-
-SELECT * FROM Rubbers WHERE RubberID BEETWEN 1 AND 10 OR RubberID BEETWEN 20 AND 30
-
-SELECT * FROM Rubbers WHERE RubberID BEETWEN 1 AND 10
-UNION--pRZY U¯YWANIU UNION musz¹ byæ te same kolumny
-SELECT * FROM Rubbers WHERE RubberID BEETWEN 20 AND 30
-
-UNION ALL-- SPRAWDZIÆ DOK£ADNIE
-
-SELECT SUM(Price) FROM Rubbers
-
-SELECT SUM(Price) AS  Sum FROM Rubbers
-
-SELECT MAX(Price) AS  Max FROM Rubbers
-
-
-DISTINCT -- ODFILTROWUJE CZYLI USUÑ DUPLIKATY -> USUWA Z WYNIKU, ALE NIE Z PROCESOWANIA 
 
 
 
