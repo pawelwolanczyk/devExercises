@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using UtilsLibrary.PabloTree;
@@ -14,7 +15,11 @@ namespace DrzewkoPawlaUzycieKlas
             TreePabloUseClass Tree = new TreePabloUseClass();
             Tree.ProcesName();
             Console.WriteLine("Wybierz znak: !@#$%^&*)");
-            Tree.Sign = (char.Parse(Console.ReadLine()));
+            if (!Tree.ProcessSign(char.Parse(Console.ReadLine())))
+            {
+                TreePabloUseClass.PrintCommunication();
+                return;
+            }
             Tree.DisplayTree();
         }
     }
