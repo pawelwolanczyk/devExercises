@@ -11,12 +11,11 @@ namespace DrzewkoPawlaUzycieKlas
     {
         static void Main(string[] args)
         {
-            TreePabloUseClass name = new TreePabloUseClass();
-            name.PrintName();
-            name.NameProperty = Console.ReadLine();
+            TreePabloUseClass Tree = new TreePabloUseClass();
+            Tree.ProcesName();
             Console.WriteLine("Wybierz znak: !@#$%^&*)");
-            name.EProperty = char.Parse(Console.ReadLine());
-            name.LoopMethod();
+            Tree.Sign = (char.Parse(Console.ReadLine()));
+            Tree.DisplayTree();
         }
     }
 }
