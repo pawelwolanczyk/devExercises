@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Geometry
 {
-    public class Rectangle
+    public class Rectangle : Shape
     {
-        List<int> list1;
         private int x;
         private int y;
 
         private Rectangle()
         {
-            list1 = new List<int>();
-            list1.Add(100);
-            list1.Add(200);
             Console.WriteLine("Inside constructor without parameters");
         }
 
@@ -27,14 +23,19 @@ namespace UtilsLibrary.Geometry
             Console.WriteLine("Inside constructor with two ints as parameters");
         }
 
-        public int Area()
+        public override string ToString()
+        {
+            return "Jestem prostokątem";
+        }
+
+        public override int Area()
         {
             return x * y;
         }
 
-        public int Perimeter()
-        {
-            return 2 * x + 2 * y;
-        }
+        //public override int Perimeter()
+        //{
+        //    return 2 * x + 2 * y;
+        //}
     }
 }

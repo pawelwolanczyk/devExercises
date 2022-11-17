@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Containers
 {
-    internal class ListItem
+    internal class ListItem : Object
     {
         private int _value;
         public ListItem _next;

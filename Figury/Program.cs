@@ -7,6 +7,22 @@ namespace Figury
     {
         static void Main(string[] args)
         {
+            Object x = new Shape();
+            Console.WriteLine(x.GetType());
+            Console.WriteLine(x.ToString());
+            Console.WriteLine(x.GetHashCode());
+
+
+            Console.ReadKey();
+
+
+
+            //  OldCode();
+        }
+
+
+        private static void OldCode()
+        {
             //we can't call constructor without parameters due to its protection level
             //Rectangle rec = new Rectangle();
 
