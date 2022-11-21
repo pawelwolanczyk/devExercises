@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39E084FB-3176-4A51-8CFF-FC2D14DC1B10}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UtilsLibrary</RootNamespace>
-    <AssemblyName>UtilsLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ProjectGuid>{0A6134D6-8786-4661-A647-BB6608794C12}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Inheritance_Joanna</RootNamespace>
+    <AssemblyName>Inheritance_Joanna</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,15 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\ListIntPrinter.cs" />
-    <Compile Include="Containers\ListItem.cs" />
-    <Compile Include="Containers\SortedIntList.cs" />
-    <Compile Include="Geometry\Rectangle.cs" />
-    <Compile Include="Inheritance_Car\Car.cs" />
-    <Compile Include="Inheritance_Car\ICar.cs" />
-    <Compile Include="Inheritance_Car\Mazda.cs" />
-    <Compile Include="Inheritance_Car\Skoda.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsLibrary\UtilsLibrary.csproj">
+      <Project>{39e084fb-3176-4a51-8cff-fc2d14dc1b10}</Project>
+      <Name>UtilsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
