@@ -47,24 +47,13 @@
     <Compile Include="Containers\SortedIntList.cs" />
     <Compile Include="Geometry\Circle.cs" />
     <Compile Include="Geometry\Rectangle.cs" />
-<<<<<<< HEAD
-=======
-
->>>>>>> 836268a3f2b6350e2bbdc18732bfa263e03e00a4
     <Compile Include="Inheritance_Car\Car.cs" />
     <Compile Include="Inheritance_Car\ICar.cs" />
     <Compile Include="Inheritance_Car\Mazda.cs" />
     <Compile Include="Inheritance_Car\Skoda.cs" />
-<<<<<<< HEAD
     <Compile Include="Geometry\IShape.cs" />
     <Compile Include="Geometry\Shape.cs" />
     <Compile Include="Geometry\Triangle.cs" />
-=======
-
-    <Compile Include="Geometry\IShape.cs" />
-    <Compile Include="Geometry\Shape.cs" />
-
->>>>>>> 836268a3f2b6350e2bbdc18732bfa263e03e00a4
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
