@@ -13,9 +13,15 @@ namespace Inheritance_Joanna
         static void Main(string[] args)
         {
             {
+                Car x = null;
                 ArrayList cars = new ArrayList();
                 cars.Add(new Skoda());
                 cars.Add(new Mazda());
+
+                foreach(object values in cars )
+                {
+                    x.PrintObject();
+                }
             }
         }
     }

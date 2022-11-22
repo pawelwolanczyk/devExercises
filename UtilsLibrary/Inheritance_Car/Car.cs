@@ -13,7 +13,7 @@ namespace UtilsLibrary.Inheritance_Car
         public abstract string NameCar();
         public abstract double EngineCapacity();
 
-        public virtual void PrintObject()
+        public void PrintObject()
         {
             Console.WriteLine(this);
             Console.WriteLine("Samochód nazywa się: " + NameCar());

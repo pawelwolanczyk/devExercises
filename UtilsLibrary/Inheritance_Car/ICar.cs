@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Inheritance_Car
 {
-    internal interface ICar
+    interface ICar
     {
         string ColorCar();
         string NameCar();
