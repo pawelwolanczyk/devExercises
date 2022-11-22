@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Geometry
 {
-    public class Shape
+    public abstract class Shape : IShape
     {
-        public virtual int Perimeter()
-        {
-            return 0;
-        }
+        public abstract double Area();
 
-        public override string ToString()
-        {
-            return "Jestem figurą";
-        }
+        public abstract double Perimeter();
 
-        virtual public int  Area()
+        public virtual void PrintObject()
         {
-            return 0;
+            Console.WriteLine(this);
+            Console.WriteLine("Powierzchnia obiektu: " + Area());
+            Console.WriteLine("Obwód obiektu: " + Perimeter());
         }
-
     }
 }

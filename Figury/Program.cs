@@ -7,19 +7,36 @@ namespace Figury
     {
         static void Main(string[] args)
         {
-            Object x = new Shape();
-            Console.WriteLine(x.GetType());
-            Console.WriteLine(x.ToString());
-            Console.WriteLine(x.GetHashCode());
+            IShape x = null;
+            Console.WriteLine("Jaka figure stworzyc? (p/o/t)");
+            char figura = Console.ReadLine()[0];
+            if (figura == 'p')
+                x = new Rectangle(4, 7);
+            else if (figura == 'o')
+                x = new Circle(5);
+            else if (figura == 't')
+            {
+                //TriangleEquailteral y = new TriangleEquailteral();
+                //y.Wysokosc(5);
+                //y.Podstawa(8);
+                //x = y;
+                x = new TriangleEquailteral();
+                (x as TriangleEquailteral).Wysokosc(5);
+                (x as TriangleEquailteral).Podstawa(8);
+            }
+            x.PrintObject();   
 
-
+            //PrintObject(x);
             Console.ReadKey();
-
-
-
             //  OldCode();
         }
 
+        //private static void PrintObject(IShape x)
+        //{
+        //    Console.WriteLine(x);
+        //    Console.WriteLine("Powierzchnia obiektu: " + x.Area());
+        //    Console.WriteLine("Obwód obiektu: " + x.Perimeter());
+        //}
 
         private static void OldCode()
         {

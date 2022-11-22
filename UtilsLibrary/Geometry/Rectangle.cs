@@ -11,7 +11,7 @@ namespace UtilsLibrary.Geometry
         private int x;
         private int y;
 
-        private Rectangle()
+        public Rectangle()
         {
             Console.WriteLine("Inside constructor without parameters");
         }
@@ -28,14 +28,14 @@ namespace UtilsLibrary.Geometry
             return "Jestem prostokątem";
         }
 
-        public override int Area()
+        public override double Area()
         {
             return x * y;
         }
 
-        //public override int Perimeter()
-        //{
-        //    return 2 * x + 2 * y;
-        //}
+        public override double Perimeter()
+        {
+            return 2 * x + 2 * y;
+        }
     }
 }
