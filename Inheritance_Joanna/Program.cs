@@ -10,18 +10,20 @@ namespace Inheritance_Joanna
 {
      class Program
     {
-        static void Main(string[] args)
+        static void Main(string[]args)
         {
             {
-                Car x = null;
+                Car x;
                 ArrayList cars = new ArrayList();
                 cars.Add(new Skoda());
                 cars.Add(new Mazda());
 
-                foreach(object values in cars )
+                foreach(object obj in cars )
                 {
+                    x = (Car)obj;
                     x.PrintObject();
                 }
+                Console.ReadKey();
             }
         }
     }
