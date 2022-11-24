@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilsLibrary.RentalAsia
+namespace RentalAsia
 {
-    public abstract class Movie : IMovie
+    public abstract class MoviePhisical : IMovie
     {
         private string _title;
         private int _number_of_films;
 
-        public Movie(string title, int number_of_films)
+        public MoviePhisical(string title, int number_of_films)
         {
             _title = title;
             _number_of_films = number_of_films;

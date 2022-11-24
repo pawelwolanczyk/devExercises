@@ -48,7 +48,7 @@
     <Compile Include="RentalAsia\BluRayMovie.cs" />
     <Compile Include="RentalAsia\DvdMovie.cs" />
     <Compile Include="RentalAsia\IMovie.cs" />
-    <Compile Include="RentalAsia\Movie.cs" />
+    <Compile Include="RentalAsia\MoviePhisical.cs" />
     <Compile Include="RentalAsia\Rental.cs" />
     <Compile Include="RentalAsia\StreamingMovie.cs" />
     <Compile Include="RentalAsia\VhsMovie.cs" />

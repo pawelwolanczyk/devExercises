@@ -1,26 +1,47 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UtilsLibrary.RentalAsia;
+using RentalAsia;
 
 namespace RentalAsia
 {
-    internal class RentalAsia
+    public class RentalAsia
     {
         static void Main(string[] args)
         {
             Rental x = new Rental();
 
-            x.AddMovie
+            PopuletMovies(x);
+            Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
 
-            Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś wypożyczyć.");
-            x.Find(Console.ReadLine());
-            if (true)
+            IMovie movie = x.Find(Console.ReadLine());
+            if (movie != null)
             {
-                x.Rent 
+                if (movie.Rent(DateTime.Now, DateTime.Now.AddDays(1)))
+                    Console.WriteLine("Film wypożyczam do jutra");
+                else
+                    Console.WriteLine("Mamy taki film, jednak na chwilę obecną nie jest on dostępny. Spróbuj jutro :) ");
             }
+            else
+            {
+                Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
+                List<string> filmy = x.GetAllMovies();
+                foreach(string f in filmy)
+                    Console.WriteLine(f);
+            }
+        }
+        static void PopuletMovies(Rental wypozyczalnia)
+        {
+            wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));
+            wypozyczalnia.AddMovie(new BluRayMovie("Pamiętnik", 5));
+            wypozyczalnia.AddMovie(new BluRayMovie("Need For Speed", 3));
+            wypozyczalnia.AddMovie(new DvdMovie("Za szybko za wściekle", 3));
+            wypozyczalnia.AddMovie(new DvdMovie("Harry Potter - Kamień Filozoficzny", 5));
+            wypozyczalnia.AddMovie(new DvdMovie("Harry Potter - Komnata Tajemnic", 5));
         }
     }
 }

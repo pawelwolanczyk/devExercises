@@ -5,16 +5,12 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilsLibrary.RentalAsia
+namespace RentalAsia
 {
     public class Rental
     {
-        public Rental()
-        {
-
-        }
-
         private List<IMovie> _movies = new List<IMovie>();
+
         public void AddMovie(IMovie movie)
         {
             _movies.Add(movie);
@@ -43,18 +39,15 @@ namespace UtilsLibrary.RentalAsia
             return false;
         }
 
-        List<string> GetAllMovies()
+        public List<string> GetAllMovies()
         {
-            List<string> GetAllMovies = new List<string>();
+            List<string> allMovies = new List<string>();
 
             for (int i = 0; i <= _movies.Count; i++)
             {
-                if (true)
-                {
-                    GetAllMovies.Add(_movies[i].GetTitle());
-                }
+                 allMovies.Add(_movies[i].GetTitle());
             }
-            Console.WriteLine(GetAllMovies);
+            return allMovies;
         }
     }
 }
