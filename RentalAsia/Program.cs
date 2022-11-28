@@ -39,9 +39,18 @@ namespace RentalAsia
             wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));
             wypozyczalnia.AddMovie(new BluRayMovie("Pamiętnik", 5));
             wypozyczalnia.AddMovie(new BluRayMovie("Need For Speed", 3));
+            wypozyczalnia.AddMovie(new BluRayMovie("Skazani na Shawshank", 3));
             wypozyczalnia.AddMovie(new DvdMovie("Za szybko za wściekle", 3));
             wypozyczalnia.AddMovie(new DvdMovie("Harry Potter - Kamień Filozoficzny", 5));
             wypozyczalnia.AddMovie(new DvdMovie("Harry Potter - Komnata Tajemnic", 5));
+            wypozyczalnia.AddMovie(new VhsMovie("Once Upon a Time in the West", 3));
+            wypozyczalnia.AddMovie(new VhsMovie("The Godfather", 7));
+            wypozyczalnia.AddMovie(new VhsMovie("The Godfather II", 5));
+            wypozyczalnia.AddMovie(new VhsMovie("12 Angry Men", 4));
+            wypozyczalnia.AddMovie(new StreamingMovie("Intouchables"));
+            wypozyczalnia.AddMovie(new StreamingMovie("Inception"));
+            wypozyczalnia.AddMovie(new StreamingMovie("Green Book"));
+            wypozyczalnia.AddMovie(new StreamingMovie("Zootopia"));
         }
     }
 }
