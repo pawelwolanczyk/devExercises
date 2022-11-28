@@ -21,7 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazySalesmanJoanna", "LazyS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnia", "Silnia\Silnia.csproj", "{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}"
 EndProject
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance_Joanna", "Inheritance_Joanna\Inheritance_Joanna.csproj", "{0A6134D6-8786-4661-A647-BB6608794C12}"
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentalAsia", "RentalAsia\RentalAsia.csproj", "{7C9951DE-09F4-48E8-A3C4-09FFCEA92C64}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +69,17 @@ Global
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{302D4A2C-B74A-4E23-BAE7-DD8227D624B3}.Release|Any CPU.Build.0 = Release|Any CPU
+
 		{0A6134D6-8786-4661-A647-BB6608794C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A6134D6-8786-4661-A647-BB6608794C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A6134D6-8786-4661-A647-BB6608794C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A6134D6-8786-4661-A647-BB6608794C12}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{7C9951DE-09F4-48E8-A3C4-09FFCEA92C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9951DE-09F4-48E8-A3C4-09FFCEA92C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9951DE-09F4-48E8-A3C4-09FFCEA92C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9951DE-09F4-48E8-A3C4-09FFCEA92C64}.Release|Any CPU.Build.0 = Release|Any CPU
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
