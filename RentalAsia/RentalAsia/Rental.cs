@@ -43,7 +43,7 @@ namespace RentalAsia
         {
             List<string> allMovies = new List<string>();
 
-            for (int i = 0; i <= _movies.Count; i++)
+            for (int i = 0; i < _movies.Count; i++)
             {
                  allMovies.Add(_movies[i].GetTitle());
             }

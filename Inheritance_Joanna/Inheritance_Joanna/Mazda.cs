@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilsLibrary.Inheritance_Car
+namespace Inheritance_Joanna
 {
-    public class Skoda : Car
+    public class Mazda : Car
     {
         public override string ColorCar()
         {
-            return "Zielony";
+            return "Czerowny";
         }
 
         public override string NameCar()
         {
-            return "Roomster";
+            return "Mazda 3";
         }
 
         public override double EngineCapacity()
         {
-            return 1.6;
+            return 2.5;
         }
+
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilsLibrary.Inheritance_Car
+namespace Inheritance_Joanna
 {
     abstract public class Car : ICar
     {
@@ -17,7 +17,7 @@ namespace UtilsLibrary.Inheritance_Car
         {
             Console.WriteLine(this);
             Console.WriteLine("Samochód nazywa się: " + NameCar());
-            Console.WriteLine("Kolor samochodu to: " + NameCar());
+            Console.WriteLine("Kolor samochodu to: " + ColorCar());
             Console.WriteLine("Pojemność silnika: " + EngineCapacity());
         }
     }

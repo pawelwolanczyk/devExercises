@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UtilsLibrary.Inheritance_Car;
+using Inheritance_Joanna;
 
 namespace Inheritance_Joanna
 {
