@@ -1,0 +1,9 @@
+SELECT * FROM Rubbers
+WHERE RubberID NOT IN (SELECT Rubber1ID FROM Bats UNION SELECT Rubber2ID FROM Bats)
+
+SELECT * FROM Rubbers
+LEFT OUTER JOIN (SELECT Rubber1ID FROM Bats UNION SELECT Rubber2ID FROM Bats) AS Okladziny
+ON (RubberID = Rubber1ID )
+WHERE Rubber1ID IS NULL
+
+
