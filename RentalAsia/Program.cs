@@ -47,6 +47,16 @@ namespace RentalAsia
             wypozyczalnia.AddMovie(new VhsMovie("The Godfather", 7));
             wypozyczalnia.AddMovie(new VhsMovie("The Godfather II", 5));
             wypozyczalnia.AddMovie(new VhsMovie("12 Angry Men", 4));
+            //rozwiazanie numer 1 - najpierw tworze obiekt, przechowuje w zmiennej MoviePhisical
+            //nastepnie dodaje go do listy, a potem wolam na nim metode wyswietlajaca liczbe nośników:
+            MoviePhisical x = new VhsMovie("12 Angry Men", 4);
+            wypozyczalnia.AddMovie(x);
+            x.CalculateAllFilms();
+            //rozwiazanie numer 2:
+            //wypozyczalnia.AddMovie(new VhsMovie("12 Angry Men", 4));
+            //IMovie x = wypozyczalnia.Find("12 Angry Men");
+            //(x as MoviePhisical).CalculateAllFilms();
+            Console.WriteLine(MoviePhisical.CalculateAllFilms_Static());
             wypozyczalnia.AddMovie(new StreamingMovie("Intouchables"));
             wypozyczalnia.AddMovie(new StreamingMovie("Inception"));
             wypozyczalnia.AddMovie(new StreamingMovie("Green Book"));

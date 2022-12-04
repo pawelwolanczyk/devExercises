@@ -8,6 +8,7 @@ namespace RentalAsia
 {
     public abstract class MoviePhisical : IMovie
     {
+        private static int _numberOfAllFilms = 0;
         private string _title;
         private int _number_of_films;
 
@@ -15,12 +16,14 @@ namespace RentalAsia
         {
             _title = title;
             _number_of_films = number_of_films;
+            _numberOfAllFilms += number_of_films;
         }
 
         public string GetTitle()
         {
             return _title;
         }
+
         public bool Rent(DateTime Start, DateTime endTime)
         {
             if (_number_of_films > 0)
@@ -36,6 +39,16 @@ namespace RentalAsia
             if (_number_of_films > 0)
                 return true;
             else return false;
+        }
+
+        public int CalculateAllFilms()
+        {
+            return _numberOfAllFilms;
+        }
+
+        public static int CalculateAllFilms_Static()
+        {
+            return _numberOfAllFilms;
         }
     }
 }
