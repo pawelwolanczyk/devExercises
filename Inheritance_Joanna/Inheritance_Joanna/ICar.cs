@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilsLibrary.Inheritance_Car
+namespace Inheritance_Joanna
 {
     interface ICar
     {

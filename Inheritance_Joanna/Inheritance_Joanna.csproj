@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inheritance_Joanna\Car.cs" />
+    <Compile Include="Inheritance_Joanna\ICar.cs" />
+    <Compile Include="Inheritance_Joanna\Mazda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Inheritance_Joanna\Skoda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
