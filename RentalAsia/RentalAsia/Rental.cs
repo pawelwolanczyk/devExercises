@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentalAsia.MovieImporter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -39,23 +40,57 @@ namespace RentalAsia
             return false;
         }
 
+
+        public int GetNumberOfMovies()
+        {
+            return _movies.Count;
+        }
+
+        public int NumberOfPhisicalMovies
+        {
+            get
+            {
+                int a = 0;
+
+                foreach(IMovie movie in _movies)
+                {
+                    MoviePhisical mp = (MoviePhisical)movie;
+                    if (mp != null)
+                        a += mp.NumberOfCopies;
+                }
+
+                return a;
+            }
+        }
+
         public List<string> GetAllMovies()
         {
             List<string> allMovies = new List<string>();
-
-            for (int i = 0; i < _movies.Count; i++)
-            {
-                 allMovies.Add(_movies[i].GetTitle());
-            }
 
             foreach(IMovie movie in _movies)
             {
                 allMovies.Add(movie.GetTitle());
             }
 
-            IMovie item = _movies.First();
-
             return allMovies;
+        }
+
+        public string GetMoviesAsText()
+        {
+            string result = String.Empty;
+            List<string> filmy = GetAllMovies();
+            foreach (string item in filmy)
+                result += (item + "\n");
+
+            return result;
+        }
+
+        void Import(IMovieImporter importer)
+        {
+            if (importer.ImportMovies())
+                _movies.AddRange(importer.Movies);
+            else
+                Console.WriteLine("Import failed");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RentalAsia;
+using RentalAsia.MovieImporter;
 
 namespace RentalAsia
 {
@@ -28,11 +29,19 @@ namespace RentalAsia
             }
             else
             {
+                Console.WriteLine("Posiadamy w naszej kolekcji " + x.NumberOfMovies + " filmów");
                 Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
                 List<string> filmy = x.GetAllMovies();
                 foreach(string f in filmy)
                     Console.WriteLine(f);
             }
+
+            //x.NumberOfMovies = 1000;
+            //Console.WriteLine("Mamy w kolekcji " + x.NumberOfMovies + " filmow");
+
+            FileMoviesImporter importer = new FileMoviesImporter();
+            importer.ExportMovies(x);
+            //importer.Movies = new List<IMovie>();
         }
         static void PopuletMovies(Rental wypozyczalnia)
         {

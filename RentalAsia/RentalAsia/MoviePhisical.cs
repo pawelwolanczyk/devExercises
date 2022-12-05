@@ -50,5 +50,13 @@ namespace RentalAsia
         {
             return _numberOfAllFilms;
         }
+
+        public int NumberOfCopies
+        {
+            get
+            {
+                return _number_of_films;
+            }
+        }
     }
 }

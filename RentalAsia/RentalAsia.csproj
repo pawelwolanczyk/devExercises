@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieImporter\FileMoviesImporter.cs" />
+    <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalAsia\BluRayMovie.cs" />
