@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentalAsia
 {
-    public class Rental : User 
+    public class Rental : NewUser 
     {
         private List<IMovie> _movies = new List<IMovie>();
 

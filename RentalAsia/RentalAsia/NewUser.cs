@@ -1,74 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RentalAsia
 {
-    public class NewUser : IUser
+    public class NewUser 
     {
-        private static string _userName;
-        private static string _userSurname;
-        private static string _dateOfBirth;
-        private static string _gender;
-        private static string _login;
-        private static string _email;
-        private static string _password;
-
-
-        private List<IUser> _users = new List<IUser>();
-
-        public string UserName(string userName)
+        private static int _numberOfAllUsers = 0;
+        public NewUser()
         {
-            return _userName = userName;
+            _numberOfAllUsers++;
         }
+        public void CreateNewUser()
+        {
+            UserData newUser = new UserData();
+            Console.WriteLine("Podaj imię: ");
+            newUser.UserName(Console.ReadLine());
+            Console.WriteLine("Podaj nazwisko: ");
+            newUser.UserSurname(Console.ReadLine());
+            Console.WriteLine("Podaje datę urodzenia: ");
+            newUser.DateOfBirth(Convert.ToDateTime(Console.ReadLine()));
+            Console.WriteLine("Podaj płeć (kobieta/mężczyzna): ");
+            newUser.UserGender(Console.ReadLine());
+            Console.WriteLine("Podaj email: ");
 
-        public string UserSurname(string surname)
-        {
-            return _userSurname = surname;
-        }
-        public string DateOfBirth(DateTime date)
-        {
-            return _dateOfBirth = Convert.ToString(date);
-        }
-
-        public string UserGender(string gender)
-        {
-            return _gender = gender; 
-        }
-
-        public string UserEmail(string email)
-        {
-            return _email = email;
-        }
-
-        public bool IsEmail(string _email)
-        {
-            for (int i = 0; i < _email.Length; i++)
+            while (newUser.IsEmail(newUser.UserEmail(Console.ReadLine())) == false)
             {
-                if (Convert.ToChar(_email[i]) == '@')
-                    return true;
+                continue;
             }
-            Console.WriteLine("Podałeś niepoprawny format maila.\n Ponów próbę.");
-            return false;
-        }
 
-        public string Login(string login)
-        {
-            return _login = login;
+            Console.WriteLine("Podaj login: ");
+            newUser.Login(Console.ReadLine());
+            Console.WriteLine("Podaj hasło: ");
+            newUser.UserPassword(Console.ReadLine());
+            newUser.AddNewUser(newUser);
         }
-
-        public string UserPassword(string password)
-        {
-            return _password = password;
-        }
-
-        public void AddNewUser(IUser UserLogin)
-        {
-            _users.Add(UserLogin);
-        }
-
     }
 }
