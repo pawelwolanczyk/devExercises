@@ -47,10 +47,13 @@
     <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalAsia\User.cs" />
     <Compile Include="RentalAsia\BluRayMovie.cs" />
     <Compile Include="RentalAsia\DvdMovie.cs" />
     <Compile Include="RentalAsia\IMovie.cs" />
+    <Compile Include="RentalAsia\IUser.cs" />
     <Compile Include="RentalAsia\MoviePhisical.cs" />
+    <Compile Include="RentalAsia\NewUser.cs" />
     <Compile Include="RentalAsia\Rental.cs" />
     <Compile Include="RentalAsia\StreamingMovie.cs" />
     <Compile Include="RentalAsia\VhsMovie.cs" />

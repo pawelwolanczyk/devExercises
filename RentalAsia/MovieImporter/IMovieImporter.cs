@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RentalAsia.MovieImporter
 {
-    internal interface IMovieImporter
-    {
-        bool ImportMovies();
+    //internal interface IMovieImporter
+    //{
+    //    bool ImportMovies();
 
-        IList<IMovie> Movies { get; }
-    }
+    //    IList<IMovie> Movies { get; }
+    //}
 }

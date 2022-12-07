@@ -29,7 +29,7 @@ namespace RentalAsia
             }
             else
             {
-                Console.WriteLine("Posiadamy w naszej kolekcji " + x.NumberOfMovies + " filmów");
+                Console.WriteLine("Posiadamy w naszej kolekcji " + x.GetNumberOfMovies() + " filmów");
                 Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
                 List<string> filmy = x.GetAllMovies();
                 foreach(string f in filmy)
@@ -39,10 +39,16 @@ namespace RentalAsia
             //x.NumberOfMovies = 1000;
             //Console.WriteLine("Mamy w kolekcji " + x.NumberOfMovies + " filmow");
 
-            FileMoviesImporter importer = new FileMoviesImporter();
-            importer.ExportMovies(x);
+            //FileMoviesImporter importer = new FileMoviesImporter();
+            //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
-        }
+
+            Console.WriteLine("Użytkowniku, aby wypożyczyć film musisz założyć konto. Podaj login: ");
+            x.CreateNewUser();
+
+            
+            
+    }
         static void PopuletMovies(Rental wypozyczalnia)
         {
             wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));

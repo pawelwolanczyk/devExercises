@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentalAsia
 {
-    public class Rental
+    public class Rental : User 
     {
         private List<IMovie> _movies = new List<IMovie>();
 
@@ -85,12 +85,12 @@ namespace RentalAsia
             return result;
         }
 
-        void Import(IMovieImporter importer)
-        {
-            if (importer.ImportMovies())
-                _movies.AddRange(importer.Movies);
-            else
-                Console.WriteLine("Import failed");
-        }
+        //void Import(IMovieImporter importer)
+        //{
+        //    if (importer.ImportMovies())
+        //        _movies.AddRange(importer.Movies);
+        //    else
+        //        Console.WriteLine("Import failed");
+        //}
     }
 }
