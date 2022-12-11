@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentalAsia", "RentalAsia\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWord", "HelloWord\HelloWord.csproj", "{60EEC96E-80C4-470D-B1A8-9EAACC9643C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{66AE4E59-2CEF-4B00-B057-782C92B3501E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrzejRental", "AndrzejRental\AndrzejRental.csproj", "{00FC5CCA-4C15-4064-A87D-F0C1D29AB5D3}"
 EndProject
 Global
@@ -83,6 +85,10 @@ Global
 		{60EEC96E-80C4-470D-B1A8-9EAACC9643C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60EEC96E-80C4-470D-B1A8-9EAACC9643C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60EEC96E-80C4-470D-B1A8-9EAACC9643C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66AE4E59-2CEF-4B00-B057-782C92B3501E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AE4E59-2CEF-4B00-B057-782C92B3501E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AE4E59-2CEF-4B00-B057-782C92B3501E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AE4E59-2CEF-4B00-B057-782C92B3501E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00FC5CCA-4C15-4064-A87D-F0C1D29AB5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00FC5CCA-4C15-4064-A87D-F0C1D29AB5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00FC5CCA-4C15-4064-A87D-F0C1D29AB5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU

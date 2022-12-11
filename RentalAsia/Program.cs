@@ -29,7 +29,7 @@ namespace RentalAsia
             }
             else
             {
-                Console.WriteLine("Posiadamy w naszej kolekcji " + x.NumberOfMovies + " filmów");
+                Console.WriteLine("Posiadamy w naszej kolekcji " + x.GetNumberOfMovies() + " filmów");
                 Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
                 List<string> filmy = x.GetAllMovies();
                 foreach(string f in filmy)
