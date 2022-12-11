@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RentalAsia
 {
-    public class NewUser 
+    public class NewUser : UsersList
     {
         private static int _numberOfAllUsers = 0;
         public NewUser()
@@ -35,7 +35,8 @@ namespace RentalAsia
             newUser.Login(Console.ReadLine());
             Console.WriteLine("Podaj hasło: ");
             newUser.UserPassword(Console.ReadLine());
-            newUser.AddNewUser(newUser);
+            UsersList usersList = new UsersList();
+            usersList.AddNewUser(newUser);
         }
     }
 }

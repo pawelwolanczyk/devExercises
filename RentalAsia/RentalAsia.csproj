@@ -56,6 +56,7 @@
     <Compile Include="RentalAsia\UserData.cs" />
     <Compile Include="RentalAsia\Rental.cs" />
     <Compile Include="RentalAsia\StreamingMovie.cs" />
+    <Compile Include="RentalAsia\UsersList.cs" />
     <Compile Include="RentalAsia\VhsMovie.cs" />
   </ItemGroup>
   <ItemGroup>

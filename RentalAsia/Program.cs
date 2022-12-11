@@ -43,7 +43,7 @@ namespace RentalAsia
             //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
 
-            Console.WriteLine("Użytkowniku, aby wypożyczyć film musisz założyć konto. Podaj login: ");
+            Console.WriteLine("Użytkowniku, aby wypożyczyć film musisz założyć konto.");
             x.CreateNewUser();
 
             

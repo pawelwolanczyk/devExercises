@@ -17,9 +17,6 @@ namespace RentalAsia
         private static string _email;
         private static string _password;
 
-
-        private List<IUser> _users = new List<IUser>();
-
         public string UserName(string userName)
         {
             return _userName = userName;
@@ -63,11 +60,6 @@ namespace RentalAsia
         public string UserPassword(string password)
         {
             return _password = password;
-        }
-
-        public void AddNewUser(IUser UserLogin)
-        {
-            _users.Add(UserLogin);
         }
 
     }
