@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieExporter\XMLMovieExporter.cs" />
     <Compile Include="MovieImporter\FileMoviesImporter.cs" />
     <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
@@ -50,6 +51,8 @@
     <Compile Include="RentalAsia\BluRayMovie.cs" />
     <Compile Include="RentalAsia\DvdMovie.cs" />
     <Compile Include="RentalAsia\IMovie.cs" />
+    <Compile Include="RentalAsia\IMovieExporter.cs" />
+    <Compile Include="RentalAsia\ListMovies.cs" />
     <Compile Include="RentalAsia\MoviePhisical.cs" />
     <Compile Include="RentalAsia\Rental.cs" />
     <Compile Include="RentalAsia\StreamingMovie.cs" />

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RentalAsia;
+using RentalAsia.MovieExporter;
 using RentalAsia.MovieImporter;
 
 namespace RentalAsia
@@ -36,13 +37,15 @@ namespace RentalAsia
                     Console.WriteLine(f);
             }
 
+            x.Export(new XMLMovieExporter());
             //x.NumberOfMovies = 1000;
             //Console.WriteLine("Mamy w kolekcji " + x.NumberOfMovies + " filmow");
 
-            FileMoviesImporter importer = new FileMoviesImporter();
-            importer.ExportMovies(x);
+            //FileMoviesImporter importer = new FileMoviesImporter();
+            //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
         }
+
         static void PopuletMovies(Rental wypozyczalnia)
         {
             wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));

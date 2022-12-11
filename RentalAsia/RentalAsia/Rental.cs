@@ -10,7 +10,7 @@ namespace RentalAsia
 {
     public class Rental
     {
-        private List<IMovie> _movies = new List<IMovie>();
+        private ListMovies _movies = new ListMovies();
 
         public void AddMovie(IMovie movie)
         {
@@ -46,30 +46,34 @@ namespace RentalAsia
             return _movies.Count;
         }
 
-        public int NumberOfPhisicalMovies
-        {
-            get
-            {
-                int a = 0;
+        //public int NumberOfPhisicalMovies
+        //{
+        //    get
+        //    {
+        //        int a = 0;
 
-                foreach(IMovie movie in _movies)
-                {
-                    MoviePhisical mp = (MoviePhisical)movie;
-                    if (mp != null)
-                        a += mp.NumberOfCopies;
-                }
+        //        foreach(IMovie movie in _movies)
+        //        {
+        //            MoviePhisical mp = (MoviePhisical)movie;
+        //            if (mp != null)
+        //                a += mp.NumberOfCopies;
+        //        }
 
-                return a;
-            }
-        }
+        //        return a;
+        //    }
+        //}
 
         public List<string> GetAllMovies()
         {
             List<string> allMovies = new List<string>();
 
-            foreach(IMovie movie in _movies)
+            //foreach(IMovie movie in _movies)
+            //{
+            //    allMovies.Add(movie.GetTitle());
+            //}
+            for (int i = 0; i < _movies.Count; i++)
             {
-                allMovies.Add(movie.GetTitle());
+                allMovies.Add(_movies[i].GetTitle());
             }
 
             return allMovies;
@@ -91,6 +95,11 @@ namespace RentalAsia
                 _movies.AddRange(importer.Movies);
             else
                 Console.WriteLine("Import failed");
+        }
+
+        public void Export(IMovieExporter exporter)
+        {
+            exporter.Export(_movies);
         }
     }
 }
