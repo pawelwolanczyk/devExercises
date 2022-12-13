@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
     public class NewUser : UsersList
     {
@@ -22,8 +22,6 @@ namespace RentalAsia
             newUser.UserSurname(Console.ReadLine());
             Console.WriteLine("Podaje datę urodzenia: ");
             newUser.DateOfBirth(Convert.ToDateTime(Console.ReadLine()));
-            Console.WriteLine("Podaj płeć (kobieta/mężczyzna): ");
-            newUser.UserGender(Console.ReadLine());
             Console.WriteLine("Podaj email: ");
 
             while (newUser.IsEmail(newUser.UserEmail(Console.ReadLine())) == false)
@@ -35,8 +33,7 @@ namespace RentalAsia
             newUser.Login(Console.ReadLine());
             Console.WriteLine("Podaj hasło: ");
             newUser.UserPassword(Console.ReadLine());
-            UsersList usersList = new UsersList();
-            usersList.AddNewUser(newUser);
+            AddNewUser(newUser);
         }
     }
 }

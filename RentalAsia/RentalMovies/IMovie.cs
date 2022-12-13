@@ -5,12 +5,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
     public interface IMovie // : ISerializable
     {
         string GetTitle();
-        bool Rent(DateTime Start, DateTime endTime);
+        bool DoYouWantRent(DateTime start);
         bool IsAvailable();
+        void Rental(DateTime start);
     }
 }

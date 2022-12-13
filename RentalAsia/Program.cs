@@ -5,8 +5,10 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RentalAsia;
+using RentalAsia.RentalMovies;
 using RentalAsia.MovieImporter;
+using System.Collections.Specialized;
+using System.Runtime.CompilerServices;
 
 namespace RentalAsia
 {
@@ -15,17 +17,38 @@ namespace RentalAsia
         static void Main(string[] args)
         {
             Rental x = new Rental();
+            string answerNewUser;
+            string title;
 
-            PopuletMovies(x);
+            Console.WriteLine("Witamy w wypożyczalni filmów! \n Jeśli chciałby Pan/Pani wypożyczyć film warunkiem koniecznym jest założenie konta" +
+                "\n Czy przejść do procedury zakładania konta? (tak/nie)");
+            do
+            {
+                answerNewUser = Console.ReadLine();
+                if (answerNewUser == "tak")
+                    x.CreateNewUser();
+                else if (answerNewUser == "nie")
+                {
+                    Console.WriteLine("Zapraszamy, gdy zdecydouje się Pan/Pani na założenie konta. Zapewniamy, że nie spamujemy! Miłego dnia!");
+                    //Jak zamknąc okno konsoli?
+                }
+                else if (answerNewUser != "nie" && answerNewUser != "tak")
+                    Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
+            }
+            while (answerNewUser != "nie" && answerNewUser != "tak");
+
+            RentalMovies(x);
+
             Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
+            title = Console.ReadLine();
 
-            IMovie movie = x.Find(Console.ReadLine());
+            IMovie movie = x.Find(title);
             if (movie != null)
             {
-                if (movie.Rent(DateTime.Now, DateTime.Now.AddDays(1)))
-                    Console.WriteLine("Film wypożyczam do jutra");
-                else
-                    Console.WriteLine("Mamy taki film, jednak na chwilę obecną nie jest on dostępny. Spróbuj jutro :) ");
+                movie.DoYouWantRent(DateTime.Now);
+
+                UserData attributedToUser = new UserData();
+                attributedToUser.AttributedToUser(title);
             }
             else
             {
@@ -36,20 +59,15 @@ namespace RentalAsia
                     Console.WriteLine(f);
             }
 
+
             //x.NumberOfMovies = 1000;
             //Console.WriteLine("Mamy w kolekcji " + x.NumberOfMovies + " filmow");
 
             //FileMoviesImporter importer = new FileMoviesImporter();
             //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
-
-            Console.WriteLine("Użytkowniku, aby wypożyczyć film musisz założyć konto.");
-            x.CreateNewUser();
-
-            
-            
-    }
-        static void PopuletMovies(Rental wypozyczalnia)
+        }
+        static void RentalMovies(Rental wypozyczalnia)
         {
             wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));
             wypozyczalnia.AddMovie(new BluRayMovie("Pamiętnik", 5));
@@ -62,16 +80,6 @@ namespace RentalAsia
             wypozyczalnia.AddMovie(new VhsMovie("The Godfather", 7));
             wypozyczalnia.AddMovie(new VhsMovie("The Godfather II", 5));
             wypozyczalnia.AddMovie(new VhsMovie("12 Angry Men", 4));
-            //rozwiazanie numer 1 - najpierw tworze obiekt, przechowuje w zmiennej MoviePhisical
-            //nastepnie dodaje go do listy, a potem wolam na nim metode wyswietlajaca liczbe nośników:
-            MoviePhisical x = new VhsMovie("12 Angry Men", 4);
-            wypozyczalnia.AddMovie(x);
-            x.CalculateAllFilms();
-            //rozwiazanie numer 2:
-            //wypozyczalnia.AddMovie(new VhsMovie("12 Angry Men", 4));
-            //IMovie x = wypozyczalnia.Find("12 Angry Men");
-            //(x as MoviePhisical).CalculateAllFilms();
-            Console.WriteLine(MoviePhisical.CalculateAllFilms_Static());
             wypozyczalnia.AddMovie(new StreamingMovie("Intouchables"));
             wypozyczalnia.AddMovie(new StreamingMovie("Inception"));
             wypozyczalnia.AddMovie(new StreamingMovie("Green Book"));

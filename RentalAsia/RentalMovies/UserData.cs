@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
     public class UserData : IUser
     {
         private static string _userName;
         private static string _userSurname;
         private static string _dateOfBirth;
-        private static string _gender;
         private static string _login;
         private static string _email;
         private static string _password;
+        private int _number_of_movies_rented_by_the_user;
 
         public string UserName(string userName)
         {
@@ -29,11 +29,6 @@ namespace RentalAsia
         public string DateOfBirth(DateTime date)
         {
             return _dateOfBirth = Convert.ToString(date);
-        }
-
-        public string UserGender(string gender)
-        {
-            return _gender = gender; 
         }
 
         public string UserEmail(string email)
@@ -56,11 +51,20 @@ namespace RentalAsia
         {
             return _login = login;
         }
+        
+        public string ReturnLogin
+        {
+            get { return _login; }
+        }
 
         public string UserPassword(string password)
         {
             return _password = password;
         }
 
+        public string AttributedToUser(string title)
+        {
+            return _login + " " + title + " " + Convert.ToString(_number_of_movies_rented_by_the_user ++);
+        }
     }
 }

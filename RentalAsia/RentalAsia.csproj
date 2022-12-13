@@ -47,17 +47,17 @@
     <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalAsia\NewUser.cs" />
-    <Compile Include="RentalAsia\BluRayMovie.cs" />
-    <Compile Include="RentalAsia\DvdMovie.cs" />
-    <Compile Include="RentalAsia\IMovie.cs" />
-    <Compile Include="RentalAsia\IUser.cs" />
-    <Compile Include="RentalAsia\MoviePhisical.cs" />
-    <Compile Include="RentalAsia\UserData.cs" />
-    <Compile Include="RentalAsia\Rental.cs" />
-    <Compile Include="RentalAsia\StreamingMovie.cs" />
-    <Compile Include="RentalAsia\UsersList.cs" />
-    <Compile Include="RentalAsia\VhsMovie.cs" />
+    <Compile Include="RentalMovies\NewUser.cs" />
+    <Compile Include="RentalMovies\BluRayMovie.cs" />
+    <Compile Include="RentalMovies\DvdMovie.cs" />
+    <Compile Include="RentalMovies\IMovie.cs" />
+    <Compile Include="RentalMovies\IUser.cs" />
+    <Compile Include="RentalMovies\MoviePhisical.cs" />
+    <Compile Include="RentalMovies\UserData.cs" />
+    <Compile Include="RentalMovies\Rental.cs" />
+    <Compile Include="RentalMovies\StreamingMovie.cs" />
+    <Compile Include="RentalMovies\UsersList.cs" />
+    <Compile Include="RentalMovies\VhsMovie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

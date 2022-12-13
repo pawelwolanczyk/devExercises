@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
     public interface IUser
     {
@@ -15,8 +15,6 @@ namespace RentalAsia
 
         string DateOfBirth(DateTime date);
 
-        string UserGender(string gender);
-
         string UserEmail(string email);
 
         bool IsEmail(string _email);
@@ -24,6 +22,8 @@ namespace RentalAsia
         string Login(string login);
 
         string UserPassword(string password);
+
+        string AttributedToUser(string title);
 
     }
 }
