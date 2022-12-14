@@ -16,7 +16,7 @@ namespace RentalAsia
     {
         static void Main(string[] args)
         {
-            Rental x = new Rental();
+            NewUser newUser = new NewUser();
             string answerNewUser;
             string title;
 
@@ -26,7 +26,7 @@ namespace RentalAsia
             {
                 answerNewUser = Console.ReadLine();
                 if (answerNewUser == "tak")
-                    x.CreateNewUser();
+                    newUser.CreateNewUser();
                 else if (answerNewUser == "nie")
                 {
                     Console.WriteLine("Zapraszamy, gdy zdecydouje się Pan/Pani na założenie konta. Zapewniamy, że nie spamujemy! Miłego dnia!");
@@ -36,6 +36,8 @@ namespace RentalAsia
                     Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
             }
             while (answerNewUser != "nie" && answerNewUser != "tak");
+
+            Rental x = new Rental();
 
             RentalMovies(x);
 
