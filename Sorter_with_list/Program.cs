@@ -25,6 +25,8 @@ namespace Sorter_with_list
             while (userValue != "x");
 
             Console.WriteLine(lista);
+
+            lista.SerializeToXml();
             //ListIntPrinter.StaticPrint(lista);
             //ListIntPrinter x = new ListIntPrinter();
             //x.ObjectPrint(lista);

@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace UtilsLibrary.Containers
 {
+    [XmlRootAttribute("SortedIntList", Namespace = "http://www.devExcercises.com",
+IsNullable = false)]
     public class SortedIntList
     {
         ListItem _begin;
@@ -18,7 +23,7 @@ namespace UtilsLibrary.Containers
 
         public void Add(int x)
         {
-            if(_begin == null)
+            if (_begin == null)
             {
                 _begin = new ListItem(x);
                 return;
@@ -75,6 +80,53 @@ namespace UtilsLibrary.Containers
         internal ListItem GetBegin()
         {
             return _begin;
+        }
+
+        public bool SerializeToXml()
+        {
+            FileStream fs = new FileStream("C:\\temp\\listaint.xml", FileMode.OpenOrCreate);
+
+            try
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(SortedIntList));
+                xmlSerializer.Serialize(fs, this);
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine("Exception thrown: " + x.Message);
+                return false;
+            }
+
+            return true;
+        }
+
+        [XmlArray("Items")]
+        public int[] OrderedItems
+        {
+            get
+            {
+                List<int> ints = new List<int>();
+                ListItem element = _begin;
+
+                while (element != null)
+                {
+                    ints.Add(element.GetValue());
+                    element = element._next;
+                }
+
+                return ints.ToArray();
+            }
+            set { }
+        }
+
+        [XmlArray("FakeItems")]
+        public string[] FakeItems
+        {
+            get
+            {
+                return new string[] { "ala", "ma", "kota" };
+            }
+            set { }
         }
     }
 }
