@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RentalAsia.RentalMovies
 {
-    public  class MoviePhisical : IMovie
+    public abstract class MoviePhisical : IMovie
     {
         List<IUser> _users;
         private static int _numberOfAllFilms = 0;
@@ -50,10 +50,9 @@ namespace RentalAsia.RentalMovies
 
         public bool Rent(DateTime start, IUser user)
         {
-            _rentDate = start.Date;
-            if (_users.Count < _numberOfAllFilms)
+            if (_number_of_copies_film > 0)
             {
-                _users.Add(user);
+                _number_of_copies_film--;
                 return true;
             }
             else

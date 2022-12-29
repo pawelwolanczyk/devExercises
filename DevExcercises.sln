@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWord", "HelloWord\Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionaries", "Dictionaries\Dictionaries.csproj", "{B8A49EB9-B601-4917-B16F-EA7DAA5B0AE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentalUnitTests", "RentalUnitTests\RentalUnitTests.csproj", "{90923211-9642-46DC-AFF3-F8F3F01716E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{B8A49EB9-B601-4917-B16F-EA7DAA5B0AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A49EB9-B601-4917-B16F-EA7DAA5B0AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A49EB9-B601-4917-B16F-EA7DAA5B0AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90923211-9642-46DC-AFF3-F8F3F01716E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90923211-9642-46DC-AFF3-F8F3F01716E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90923211-9642-46DC-AFF3-F8F3F01716E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90923211-9642-46DC-AFF3-F8F3F01716E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

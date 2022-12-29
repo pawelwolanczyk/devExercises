@@ -53,6 +53,11 @@ namespace RentalAsia.RentalMovies
             throw new NotImplementedException();
         }
 
+        public bool StartStreaming()
+        {
+            return true;
+        }
+
         public List<IUser> GetUsers()
         {
             throw new NotImplementedException();

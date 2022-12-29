@@ -70,7 +70,7 @@ namespace RentalAsia
             //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
         }
-        static void RentalMovies(Rental wypozyczalnia)
+        public static void RentalMovies(Rental wypozyczalnia)
         {
             wypozyczalnia.AddMovie(new BluRayMovie("Garfild", 2));
             wypozyczalnia.AddMovie(new BluRayMovie("Pamiętnik", 5));
