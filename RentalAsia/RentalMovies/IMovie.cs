@@ -12,6 +12,9 @@ namespace RentalAsia.RentalMovies
         string GetTitle();
         bool DoYouWantRent(DateTime start);
         bool IsAvailable();
-        void Rental(DateTime start);
+
+        void Rent(DateTime start, IUser user);
+
+        List<IUser> GetUsers();
     }
 }

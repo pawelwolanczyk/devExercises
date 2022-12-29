@@ -9,10 +9,12 @@ namespace RentalAsia.RentalMovies
 {
     public  class MoviePhisical : IMovie
     {
+        List<IUser> _users;
         private static int _numberOfAllFilms = 0;
         private string _title;
         private int _number_of_copies_film;
         private string answerRent;
+        private DateTime _rentDate;
         //private string _titleVideoAttributedOfUser;
 
         public MoviePhisical(string title, int number_of_films)
@@ -20,6 +22,7 @@ namespace RentalAsia.RentalMovies
             _title = title;
             _number_of_copies_film = number_of_films;
             _numberOfAllFilms += number_of_films;
+            _users = new List<IUser>();
         }
 
         public string GetTitle()
@@ -31,7 +34,7 @@ namespace RentalAsia.RentalMovies
         {
             if (_number_of_copies_film > 0)
             {
-                Rental(start);
+                //Rental(start);
                 return true;
             }
             Console.WriteLine("Mamy taki film, jednak na chwilę obecną nie jest on dostępny. Spróbuj jutro :) ");
@@ -45,30 +48,16 @@ namespace RentalAsia.RentalMovies
             else return false;
         }
 
-        public void Rental(DateTime start)
+        public bool Rent(DateTime start, IUser user)
         {
-            DateTime daystart = start.Date;
-
-            Console.WriteLine("Posiadamy poszukiwany przez Ciebie film.\n Czy chcesz go wypożyczyć? (tak/nie)");
-            do
+            _rentDate = start.Date;
+            if (_users.Count < _numberOfAllFilms)
             {
-                answerRent = Console.ReadLine();
-
-                if (answerRent == "tak")
-                {
-                    _number_of_copies_film--;
-                    Console.WriteLine("Wypożyczamy Pani/Panu film do " + daystart.AddDays(1) + "Oddanie filmu po terminie wiąze się z dodatkową opłatą.");
-                }
-                else if (answerRent == "nie")
-                {
-                    Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
-                }
-                else if (answerRent != "tak" && answerRent != "nie")
-                {
-                    Console.WriteLine("Nie rozumiem odpowiedzi. Proszę odpowiedz jeszcze raz. Czy chcesz wypożyczyć wyszukiwany film? (tak/nie");
-                }
+                _users.Add(user);
+                return true;
             }
-            while (answerRent != "tak" && answerRent != "nie");
+            else
+                return false;
         }
 
         public int CalculateAllFilms()
@@ -79,6 +68,16 @@ namespace RentalAsia.RentalMovies
         public static int CalculateAllFilms_Static()
         {
             return _numberOfAllFilms;
+        }
+
+        void IMovie.Rent(DateTime start, IUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IUser> GetUsers()
+        {
+            throw new NotImplementedException();
         }
 
         public int NumberOfCopies

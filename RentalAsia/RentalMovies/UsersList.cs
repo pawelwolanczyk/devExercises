@@ -8,11 +8,5 @@ namespace RentalAsia.RentalMovies
 {
     public class UsersList : List<IUser>
     {
-
-        private List<IUser> _users = new List<IUser>();
-        public void AddNewUser(IUser UserLogin)
-        {
-            _users.Add(UserLogin);
-        }
     }
 }

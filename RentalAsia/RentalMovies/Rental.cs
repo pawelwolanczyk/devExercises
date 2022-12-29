@@ -65,6 +65,7 @@ namespace RentalAsia.RentalMovies
 
         public List<string> GetAllMovies()
         {
+            var x = new Dictionary<Tuple<string, int>, Dictionary<string, int>>();
             List<string> allMovies = new List<string>();
 
             foreach(IMovie movie in _movies)

@@ -9,6 +9,8 @@ namespace RentalAsia.RentalMovies
 {
     public class UserData : IUser
     {
+        List<IMovie> _rendedMovies;
+
         private static string _userName;
         private static string _userSurname;
         private static string _dateOfBirth;

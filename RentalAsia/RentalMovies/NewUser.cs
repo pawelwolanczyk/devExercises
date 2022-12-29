@@ -17,7 +17,8 @@ namespace RentalAsia.RentalMovies
         {
             UserData newUser = new UserData();
             Console.WriteLine("Podaj imię: ");
-            newUser.UserName(Console.ReadLine());
+            var userName = Console.ReadLine();
+            newUser.UserName(userName);
             Console.WriteLine("Podaj nazwisko: ");
             newUser.UserSurname(Console.ReadLine());
             Console.WriteLine("Podaje datę urodzenia: ");
@@ -33,8 +34,20 @@ namespace RentalAsia.RentalMovies
             newUser.Login(Console.ReadLine());
             Console.WriteLine("Podaj hasło: ");
             newUser.UserPassword(Console.ReadLine());
-            UsersList list = new UsersList();
-            list.AddNewUser(newUser);
+            //UsersList list = new List<IUser>();
+            //list.Add(newUser);
+            //list.AddNewUser(newUser);
+        }
+
+        public bool Metoda()
+        {
+            return true;
+        }
+
+        public string Metoda(int y)
+        {
+            var x = "cos";
+            return x;
         }
     }
 }

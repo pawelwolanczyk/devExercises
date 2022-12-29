@@ -32,7 +32,7 @@ namespace RentalAsia
                     Console.WriteLine("Zapraszamy, gdy zdecydouje się Pan/Pani na założenie konta. Zapewniamy, że nie spamujemy! Miłego dnia!");
                     //Jak zamknąc okno konsoli?
                 }
-                else if (answerNewUser != "nie" && answerNewUser != "tak")
+                else
                     Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
             }
             while (answerNewUser != "nie" && answerNewUser != "tak");
@@ -47,10 +47,11 @@ namespace RentalAsia
             IMovie movie = x.Find(title);
             if (movie != null)
             {
-                movie.DoYouWantRent(DateTime.Now);
+                //movie.DoYouWantRent(DateTime.Now);
 
-                UserData attributedToUser = new UserData();
-                attributedToUser.AttributedToUser(title);
+                //UserData attributedToUser = new UserData();
+                //attributedToUser.AttributedToUser(title);
+                //movie.Rental(startTime, newUser);
             }
             else
             {

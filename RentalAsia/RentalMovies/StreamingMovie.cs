@@ -48,6 +48,16 @@ namespace RentalAsia.RentalMovies
             return true;
         }
 
+        public void Rent(DateTime start, IUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IUser> GetUsers()
+        {
+            throw new NotImplementedException();
+        }
+
         public StreamingMovie(string title)
         {
             _title = title;
