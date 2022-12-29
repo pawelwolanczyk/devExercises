@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +16,30 @@ namespace RentalAsia.RentalMovies
         private static string _login;
         private static string _email;
         private static string _password;
+        private static int _idUser = 0;
+        private static int _numberOfAllUsers = 0;// czy muszę ustawiać na zero, czy naturalnie zacznie od zera?
         private int _number_of_movies_rented_by_the_user;
 
+        private List<IUser> _listUsers = new List<IUser>();
+        public UserData()
+        {
+
+        }
+
+        public UserData(string login, string userName, string userSurname, string dateOfBirth, string email)
+        {
+            _login = login;
+            _userName = userName;
+            _userSurname = userSurname;
+            _dateOfBirth = dateOfBirth;
+            _email = email;
+            _idUser++; 
+        }
+        
+        public int Id(int _idUser)
+        {
+            return _idUser;
+        }
         public string UserName(string userName)
         {
             return _userName = userName;
@@ -62,9 +85,31 @@ namespace RentalAsia.RentalMovies
             return _password = password;
         }
 
-        public string AttributedToUser(string title)
+        internal void AddUserToList(IUser newuser)
         {
-            return _login + " " + title + " " + Convert.ToString(_number_of_movies_rented_by_the_user ++);
+            _listUsers.Add(newuser);
+        }
+
+        public void CreateNewUser()
+        {
+            Console.WriteLine("Podaj imię: ");
+            UserName(Console.ReadLine());
+            Console.WriteLine("Podaj nazwisko: ");
+            UserSurname(Console.ReadLine());
+            Console.WriteLine("Podaje datę urodzenia: ");
+            DateOfBirth(Convert.ToDateTime(Console.ReadLine()));
+            Console.WriteLine("Podaj email: ");
+
+            while (IsEmail(UserEmail(Console.ReadLine())) == false)
+            {
+                continue;
+            }
+
+            Console.WriteLine("Podaj login: ");
+            Login(Console.ReadLine());
+            Console.WriteLine("Podaj hasło: ");
+            UserPassword(Console.ReadLine());
+            AddUserToList(new UserData(_login, _userName, _userSurname, _dateOfBirth, _email));
         }
     }
 }

@@ -43,20 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu\Menu.cs" />
     <Compile Include="MovieImporter\FileMoviesImporter.cs" />
     <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalMovies\NewUser.cs" />
+    <Compile Include="UserAccount\NewUser.cs" />
     <Compile Include="RentalMovies\BluRayMovie.cs" />
     <Compile Include="RentalMovies\DvdMovie.cs" />
     <Compile Include="RentalMovies\IMovie.cs" />
-    <Compile Include="RentalMovies\IUser.cs" />
+    <Compile Include="UserAccount\IUser.cs" />
     <Compile Include="RentalMovies\MoviePhisical.cs" />
-    <Compile Include="RentalMovies\UserData.cs" />
+    <Compile Include="UserAccount\UserData.cs" />
     <Compile Include="RentalMovies\Rental.cs" />
     <Compile Include="RentalMovies\StreamingMovie.cs" />
-    <Compile Include="RentalMovies\UsersList.cs" />
     <Compile Include="RentalMovies\VhsMovie.cs" />
   </ItemGroup>
   <ItemGroup>

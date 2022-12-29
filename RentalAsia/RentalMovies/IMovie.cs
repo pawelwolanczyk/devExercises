@@ -10,8 +10,7 @@ namespace RentalAsia.RentalMovies
     public interface IMovie // : ISerializable
     {
         string GetTitle();
-        bool DoYouWantRent(DateTime start);
         bool IsAvailable();
-        void Rental(DateTime start);
+        bool Rental(DateTime start, DateTime end);
     }
 }

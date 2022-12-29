@@ -14,33 +14,34 @@ namespace RentalAsia.RentalMovies
         {
             return _title;
         }
-        public bool DoYouWantRent(DateTime start )
+        //public bool DoYouWantRent(DateTime start )
+        //{
+        //    Rental(start);
+        //    return true;
+        //}
+
+        public bool Rental(DateTime start, DateTime end)
         {
-            Rental(start);
             return true;
-        }
+            //Console.WriteLine("Posiadamy poszukiwany przez Ciebie film.\n Czy chcesz go wypożyczyć? (tak/nie)");
+            //do
+            //{
+            //    answerRent = Console.ReadLine();
 
-        public void Rental(DateTime start)
-        {
-            Console.WriteLine("Posiadamy poszukiwany przez Ciebie film.\n Czy chcesz go wypożyczyć? (tak/nie)");
-            do
-            {
-                answerRent = Console.ReadLine();
-
-                if (answerRent == "tak")
-                {
-                    Console.WriteLine("Wypożyczamy Pani/Panu film do " + start.AddDays(1) + "Oddanie filmu po terminie wiąze się z dodatkową opłatą.");
-                }
-                else if (answerRent == "nie")
-                {
-                    Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
-                }
-                else if (answerRent != "tak" && answerRent != "nie")
-                {
-                    Console.WriteLine("Nie rozumiem odpowiedzi. Proszę odpowiedz jeszcze raz. Czy chcesz wypożyczyć wyszukiwany film? (tak/nie");
-                }
-            }
-            while (answerRent != "tak" && answerRent != "nie");
+            //    if (answerRent == "tak")
+            //    {
+            //        Console.WriteLine("Wypożyczamy Pani/Panu film do " + start.AddDays(1) + "Oddanie filmu po terminie wiąze się z dodatkową opłatą.");
+            //    }
+            //    else if (answerRent == "nie")
+            //    {
+            //        Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
+            //    }
+            //    else if (answerRent != "tak" && answerRent != "nie")
+            //    {
+            //        Console.WriteLine("Nie rozumiem odpowiedzi. Proszę odpowiedz jeszcze raz. Czy chcesz wypożyczyć wyszukiwany film? (tak/nie");
+            //    }
+            //}
+            //while (answerRent != "tak" && answerRent != "nie");
         }
 
         public virtual bool IsAvailable()

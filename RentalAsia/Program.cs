@@ -16,50 +16,67 @@ namespace RentalAsia
     {
         static void Main(string[] args)
         {
-            NewUser newUser = new NewUser();
+            UserData newUser = new UserData();
             string answerNewUser;
             string title;
 
+            Rental x = new Rental();
+            RentalMovies(x);
+            UserList(newUser);
+
             Console.WriteLine("Witamy w wypożyczalni filmów! \n Jeśli chciałby Pan/Pani wypożyczyć film warunkiem koniecznym jest założenie konta" +
-                "\n Czy przejść do procedury zakładania konta? (tak/nie)");
+                "\n Czy posiadasz już u nas konto użytkownika? (tak/nie)");
+
+            answerNewUser = Console.ReadLine();
+
             do
             {
-                answerNewUser = Console.ReadLine();
                 if (answerNewUser == "tak")
-                    newUser.CreateNewUser();
+                {
+                    //Tutaj mam wywołać logowanie do profilu użytkownika
+                }
                 else if (answerNewUser == "nie")
                 {
-                    Console.WriteLine("Zapraszamy, gdy zdecydouje się Pan/Pani na założenie konta. Zapewniamy, że nie spamujemy! Miłego dnia!");
-                    //Jak zamknąc okno konsoli?
+                    Console.WriteLine("Czy chcesz założyć konto użytkownika i swobodnie wypożyczać filmy? (tak/nie)");
+                    answerNewUser = Console.ReadLine();
+                    do
+                    {
+                        if (answerNewUser == "tak")
+                        {
+                            newUser.CreateNewUser();
+                        }
+                        else if (answerNewUser == "nie")
+                            Console.WriteLine("Zapraszamy, gdy zdecydouje się Pan/Pani na założenie konta. Zapewniamy, że nie spamujemy! Miłego dnia!");
+                        else
+                            Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
+                    }
+                    while (answerNewUser != "nie" && answerNewUser != "tak");
+                    }
+                else
+                        Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz posiadasz konto użytkownika? (tak/nie)");
                 }
-                else if (answerNewUser != "nie" && answerNewUser != "tak")
-                    Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
-            }
             while (answerNewUser != "nie" && answerNewUser != "tak");
 
-            Rental x = new Rental();
 
-            RentalMovies(x);
+            //Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
+            //title = Console.ReadLine();
 
-            Console.WriteLine("Podaj tytuł filmu, jaki chciałbyś/chciałabyś wypożyczyć.");
-            title = Console.ReadLine();
+            //IMovie movie = x.Find(title);
+            //if (movie != null)
+            //{
+            //    movie.DoYouWantRent(DateTime.Now);
 
-            IMovie movie = x.Find(title);
-            if (movie != null)
-            {
-                movie.DoYouWantRent(DateTime.Now);
-
-                UserData attributedToUser = new UserData();
-                attributedToUser.AttributedToUser(title);
-            }
-            else
-            {
-                Console.WriteLine("Posiadamy w naszej kolekcji " + x.GetNumberOfMovies() + " filmów");
-                Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
-                List<string> filmy = x.GetAllMovies();
-                foreach(string f in filmy)
-                    Console.WriteLine(f);
-            }
+            //    UserData attributedToUser = new UserData();
+            //    attributedToUser.AttributedToUser(title);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Posiadamy w naszej kolekcji " + x.GetNumberOfMovies() + " filmów");
+            //    Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
+            //    List<string> filmy = x.GetAllMovies();
+            //    foreach(string f in filmy)
+            //        Console.WriteLine(f);
+            //}
 
 
             //x.NumberOfMovies = 1000;
@@ -68,6 +85,16 @@ namespace RentalAsia
             //FileMoviesImporter importer = new FileMoviesImporter();
             //importer.ExportMovies(x);
             //importer.Movies = new List<IMovie>();
+        }
+        static void UserList(UserData nameUser)
+        {
+            nameUser.AddUserToList(new UserData("Mieciu", " Mieczysław", "Kowalski", " 12.12.1956", "mieciu123@gmail.com"));
+            nameUser.AddUserToList(new UserData("Maniek", " Stasiek", " Leniuch", " 22.12.1956", "stasiek123@gmail.com"));
+            nameUser.AddUserToList(new UserData("foczka", " Jola", " Motyl", " 16.12.1978", "foczka123@gmail.com"));
+            nameUser.AddUserToList(new UserData("kicia", " Basia", " Trump", " 12.11.1956", "basia123@gmail.com"));
+            nameUser.AddUserToList(new UserData("lulu", " Stanisława", " Falalalala", "12.06.1996", "lulu123@gmail.com"));
+            nameUser.AddUserToList(new UserData("gwiazdka", " Gertruda", " Mankiewicz", "12.12.1986", "gwiazdka123@gmail.com"));
+
         }
         static void RentalMovies(Rental wypozyczalnia)
         {

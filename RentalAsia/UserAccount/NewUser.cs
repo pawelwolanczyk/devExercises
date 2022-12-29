@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace RentalAsia.RentalMovies
 {
-    public class UsersList : List<IUser>
+    public class NewUser 
     {
-
-        private List<IUser> _users = new List<IUser>();
-        public void AddNewUser(IUser UserLogin)
+        private static int _numberOfAllUsers = 0;
+        public NewUser()
         {
-            _users.Add(UserLogin);
+            _numberOfAllUsers++;
         }
+       
+        
     }
 }

@@ -23,7 +23,7 @@ namespace RentalAsia.RentalMovies
 
         string UserPassword(string password);
 
-        string AttributedToUser(string title);
+        //string AttributedToUser(IMovie movie);
 
     }
 }
