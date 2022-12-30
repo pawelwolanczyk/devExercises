@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
     public class VhsMovie : MoviePhisical
     {

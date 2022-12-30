@@ -6,9 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalAsia
+namespace RentalAsia.RentalMovies
 {
-    public class Rental
+    public class Rental 
     {
         private List<IMovie> _movies = new List<IMovie>();
 
@@ -65,6 +65,7 @@ namespace RentalAsia
 
         public List<string> GetAllMovies()
         {
+            var x = new Dictionary<Tuple<string, int>, Dictionary<string, int>>();
             List<string> allMovies = new List<string>();
 
             foreach(IMovie movie in _movies)
@@ -85,12 +86,12 @@ namespace RentalAsia
             return result;
         }
 
-        void Import(IMovieImporter importer)
-        {
-            if (importer.ImportMovies())
-                _movies.AddRange(importer.Movies);
-            else
-                Console.WriteLine("Import failed");
-        }
+        //void Import(IMovieImporter importer)
+        //{
+        //    if (importer.ImportMovies())
+        //        _movies.AddRange(importer.Movies);
+        //    else
+        //        Console.WriteLine("Import failed");
+        //}
     }
 }
