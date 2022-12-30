@@ -8,6 +8,7 @@ namespace RentalAsia.RentalMovies
 {
     public class NewUser 
     {
+<<<<<<< HEAD:RentalAsia/UserAccount/NewUser.cs
         private static int _numberOfAllUsers = 0;
         public NewUser()
         {
@@ -15,5 +16,7 @@ namespace RentalAsia.RentalMovies
         }
        
         
+=======
+>>>>>>> a2aa6afe8c976fd63db1dd5c7b5f0993c66ed99f:RentalAsia/RentalMovies/UsersList.cs
     }
 }

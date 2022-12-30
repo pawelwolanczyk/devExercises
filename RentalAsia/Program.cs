@@ -55,6 +55,12 @@ namespace RentalAsia
                 else
                         Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz posiadasz konto użytkownika? (tak/nie)");
                 }
+<<<<<<< HEAD
+=======
+                else
+                    Console.WriteLine("Nie rozpoznaliśmy odpowiedzi. Proszę podaj jeszcze raz odpowiedź, czy chcesz założyć konto? (tak/nie)");
+            }
+>>>>>>> a2aa6afe8c976fd63db1dd5c7b5f0993c66ed99f
             while (answerNewUser != "nie" && answerNewUser != "tak");
 
 
@@ -66,6 +72,7 @@ namespace RentalAsia
             //{
             //    movie.DoYouWantRent(DateTime.Now);
 
+<<<<<<< HEAD
             //    UserData attributedToUser = new UserData();
             //    attributedToUser.AttributedToUser(title);
             //}
@@ -77,6 +84,25 @@ namespace RentalAsia
             //    foreach(string f in filmy)
             //        Console.WriteLine(f);
             //}
+=======
+            IMovie movie = x.Find(title);
+            if (movie != null)
+            {
+                //movie.DoYouWantRent(DateTime.Now);
+
+                //UserData attributedToUser = new UserData();
+                //attributedToUser.AttributedToUser(title);
+                //movie.Rental(startTime, newUser);
+            }
+            else
+            {
+                Console.WriteLine("Posiadamy w naszej kolekcji " + x.GetNumberOfMovies() + " filmów");
+                Console.WriteLine("Niestety nie posiadamy porządanego przez państwa filmu. \n Aktualnie dysponujemy filmami:");
+                List<string> filmy = x.GetAllMovies();
+                foreach(string f in filmy)
+                    Console.WriteLine(f);
+            }
+>>>>>>> a2aa6afe8c976fd63db1dd5c7b5f0993c66ed99f
 
 
             //x.NumberOfMovies = 1000;
