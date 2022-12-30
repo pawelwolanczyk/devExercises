@@ -17,7 +17,15 @@ namespace RentalAsia.MovieImporter
     //    //    FileStream fs = File.Open("C:\\Temp2\\filmy.txt", FileMode.CreateNew);
     //    //    fs.Write(Encoding.ASCII.GetBytes(filmy),0, filmy.Length);
     //    //    fs.Close();
+        public bool ExportMovies(Rental rental)
+        {
+            if (rental == null)
+                throw new ArgumentNullException();
 
+            string filmy = rental.GetMoviesAsText();
+            FileStream fs = File.Open("C:\\Temp2\\filmy.txt", FileMode.CreateNew);
+            fs.Write(Encoding.ASCII.GetBytes(filmy),0, filmy.Length);
+            fs.Close();
     //    //    return true;
     //    //}
 
