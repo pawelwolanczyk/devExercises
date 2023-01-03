@@ -53,7 +53,7 @@ namespace AndrzejRental
                 string a = Console.ReadLine();
                 if (a[0] == '1')
                 {
-                    AdminMainMenu.AdminMain();
+                    AdminMainMenu.AdminMain(baseUsers, baseRental);
                 }
                 else
                 {

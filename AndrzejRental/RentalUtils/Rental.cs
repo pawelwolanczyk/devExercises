@@ -57,10 +57,18 @@ namespace AndrzejRental.RentalUtils
 
         // nowe metody
 
-        public void FillStartingCollection(string film1, string film2)
+        public bool FillStartingCollection(string film1, string film2)
         {
-            _startingCollection.Add(Find(film1));
-            _startingCollection.Add(Find(film2));
+            if ((StreamingMovie)(Find(film1)) == true)
+            {
+                _startingCollection.Add(Find(film1));
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            // _startingCollection.Add(Find(film2));
         }
 
         public List<string> GetTitlesStartingList()

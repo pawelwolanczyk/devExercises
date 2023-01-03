@@ -54,7 +54,6 @@
     <Compile Include="RentalUtils\UserRental.cs" />
     <Compile Include="RentalUtils\VhsMovie.cs" />
     <Compile Include="UserUtils\AdminMainMenu.cs" />
-    <Compile Include="UserUtils\Class1.cs" />
     <Compile Include="UserUtils\UserMainMenu.cs" />
     <Compile Include="UserUtils\UserPremium.cs" />
     <Compile Include="UserUtils\UserNormal.cs" />

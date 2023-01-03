@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AndrzejRental.UserUtils
 {
-    internal class UserPremium : UserNormal, IUser
+    internal class UserPremium : UserNormal
     {
         private static int _userPremiumCount = 0;
         
