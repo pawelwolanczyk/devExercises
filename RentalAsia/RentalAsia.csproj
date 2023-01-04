@@ -58,6 +58,7 @@
     <Compile Include="RentalMovies\StreamingMovie.cs" />
     <Compile Include="RentalMovies\UsersList.cs" />
     <Compile Include="RentalMovies\VhsMovie.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
