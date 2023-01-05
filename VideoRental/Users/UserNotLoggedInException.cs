@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrzejRental
+namespace VideoRental.Users
 {
-    internal class Program
+    internal class UserNotLoggedInException : Exception
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

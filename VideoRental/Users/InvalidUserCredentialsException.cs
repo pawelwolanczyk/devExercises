@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrzejRental.AndrzejRental_Utils
+namespace VideoRental.Users
 {
-    internal class DvdMovie : PhysicalMovie
+    internal class InvalidUserCredentialsException : Exception
     {
-       
     }
 }

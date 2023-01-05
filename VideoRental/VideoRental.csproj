@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00FC5CCA-4C15-4064-A87D-F0C1D29AB5D3}</ProjectGuid>
+    <ProjectGuid>{5A15AD06-1BB7-4950-8DA4-F7582AF5BEF1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AndrzejRental</RootNamespace>
-    <AssemblyName>AndrzejRental</AssemblyName>
+    <RootNamespace>VideoRental</RootNamespace>
+    <AssemblyName>VideoRental</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,19 +43,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndrzejRental_Utils\BluRayMovie.cs" />
-    <Compile Include="AndrzejRental_Utils\DvdMovie.cs" />
-    <Compile Include="AndrzejRental_Utils\PhysicalMovie.cs" />
-    <Compile Include="AndrzejRental_Utils\StreamingMovie.cs" />
-    <Compile Include="AndrzejRental_Utils\VhsMovie.cs" />
-    <Compile Include="AndrzejRental_Utils\IMovie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AndrzejRental_Utils\Rental.cs" />
+    <Compile Include="Movies\BluRayMovie.cs" />
+    <Compile Include="Movies\DvdMovie.cs" />
+    <Compile Include="Movies\MoviePhisical.cs" />
+    <Compile Include="Movies\IMovie.cs" />
+    <Compile Include="RentalManagement\Rental.cs" />
+    <Compile Include="Movies\StreamingMovie.cs" />
+    <Compile Include="RentalManagement\RentalHelper.cs" />
+    <Compile Include="Movies\VhsMovie.cs" />
+    <Compile Include="RentalManagement\RentalMenu\BaseConsoleHandler.cs" />
+    <Compile Include="RentalManagement\RentalMenu\ConsoleAdminMenuHandler.cs" />
+    <Compile Include="RentalManagement\RentalMenu\ConsoleMenu.cs" />
+    <Compile Include="RentalManagement\RentalMenu\IMenu.cs" />
+    <Compile Include="RentalManagement\RentalMenu\MenuHandler.cs" />
+    <Compile Include="RentalManagement\RentalMenu\ConsoleUserMenuHandler.cs" />
+    <Compile Include="RentalManagement\RentalMovies.cs" />
+    <Compile Include="RentalManagement\RentalUsers.cs" />
+    <Compile Include="Users\InvalidUserCredentialsException.cs" />
+    <Compile Include="Users\UserNotLoggedInException.cs" />
+    <Compile Include="Users\UserPremium.cs" />
+    <Compile Include="Users\UserNormal.cs" />
+    <Compile Include="Users\IUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

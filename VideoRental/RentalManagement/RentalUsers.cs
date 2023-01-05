@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VideoRental.Users;
 
-namespace AndrzejRental.AndrzejRental_Utils
+namespace VideoRental.RentalManagement
 {
-    internal class VhsMovie : PhysicalMovie
+    internal class RentalUsers : List<IUser>
     {
-       
     }
 }
