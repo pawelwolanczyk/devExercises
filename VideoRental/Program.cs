@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,9 @@ namespace VideoRental
     {
         static void Main(string[] args)
         {
+            Logger log = LogManager.GetCurrentClassLogger();
+            log.Info("Starting Rental console application");
+
             Rental rental = new Rental();
             RentalHelper.InitializeRentalPredefinedData(rental);
 
