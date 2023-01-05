@@ -9,21 +9,19 @@ namespace RentalAsia.RentalMovies
 {
     public interface IUser
     {
-        string UserName(string username);
+        string GetUserName();
 
-        string UserSurname(string surname);
+        string GetUserSurname();
 
-        string DateOfBirth(DateTime date);
+        string GetDateOfBirth();
 
-        string UserEmail(string email);
+        string GetUserEmail();
 
         bool IsEmail(string _email);
 
-        string Login(string login);
+        string GetLogin();
 
-        string UserPassword(string password);
-
-        //string AttributedToUser(IMovie movie);
+        string GetUserPassword();
 
     }
 }

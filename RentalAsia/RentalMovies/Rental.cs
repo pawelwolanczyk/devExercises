@@ -46,22 +46,22 @@ namespace RentalAsia.RentalMovies
             return _movies.Count;
         }
 
-        public int NumberOfPhisicalMovies
-        {
-            get
-            {
-                int a = 0;
+        //public int NumberOfPhisicalMovies
+        //{
+        //    get
+        //    {
+        //        int a = 0;
 
-                foreach(IMovie movie in _movies)
-                {
-                    MoviePhisical mp = (MoviePhisical)movie;
-                    if (mp != null)
-                        a += mp.NumberOfCopies;
-                }
+        //        foreach(IMovie movie in _movies)
+        //        {
+        //            MoviePhisical mp = (MoviePhisical)movie;
+        //            if (mp != null)
+        //                a += mp.NumberOfCopies;
+        //        }
 
-                return a;
-            }
-        }
+        //        return a;
+        //    }
+        //}
 
         public List<string> GetAllMovies()
         {

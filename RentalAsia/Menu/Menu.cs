@@ -11,5 +11,9 @@ namespace RentalAsia.Menu
         int IHaveAnAcount = 0;
         int CreatingAnAcount = 1;
         int UserProfile = 0;
+
+        //Switch case wybory 
+        //Przekierowanie do danego wyboru
+        //
     }
 }

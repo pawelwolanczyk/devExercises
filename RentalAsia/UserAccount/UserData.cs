@@ -1,7 +1,9 @@
-﻿using System;
+﻿using RentalAsia.UserAccount;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +12,6 @@ namespace RentalAsia.RentalMovies
 {
     public class UserData : IUser
     {
-        List<IMovie> _rendedMovies;
-
         private static string _userName;
         private static string _userSurname;
         private static string _dateOfBirth;
@@ -19,46 +19,46 @@ namespace RentalAsia.RentalMovies
         private static string _email;
         private static string _password;
         private static int _idUser = 0;
-        private static int _numberOfAllUsers = 0;// czy muszę ustawiać na zero, czy naturalnie zacznie od zera?
-        private int _number_of_movies_rented_by_the_user;
-
-        private List<IUser> _listUsers = new List<IUser>();
+        private static int _number_Of_All_Users;// czy muszę ustawiać na zero, czy naturalnie zacznie od zera?
+        
         public UserData()
         {
-
+           
         }
 
-        public UserData(string login, string userName, string userSurname, string dateOfBirth, string email)
+        public UserData(string login,string password, string userName, string userSurname, string dateOfBirth, string email)
         {
             _login = login;
+            _password = password;
             _userName = userName;
             _userSurname = userSurname;
             _dateOfBirth = dateOfBirth;
             _email = email;
-            _idUser++; 
+            _idUser++;
+            _number_Of_All_Users++;
         }
-        
-        public int Id(int _idUser)
+
+        public int GetId()
         {
             return _idUser;
         }
-        public string UserName(string userName)
+        public string GetUserName()
         {
-            return _userName = userName;
+            return _userName;
         }
 
-        public string UserSurname(string surname)
+        public string GetUserSurname()
         {
-            return _userSurname = surname;
+            return _userSurname;
         }
-        public string DateOfBirth(DateTime date)
+        public string GetDateOfBirth()
         {
-            return _dateOfBirth = Convert.ToString(date);
+            return _dateOfBirth;
         }
 
-        public string UserEmail(string email)
+        public string GetUserEmail()
         {
-            return _email = email;
+            return _email;
         }
 
         public bool IsEmail(string _email)
@@ -72,46 +72,70 @@ namespace RentalAsia.RentalMovies
             return false;
         }
 
-        public string Login(string login)
+        public string GetLogin()
         {
-            return _login = login;
+            return _login;
         }
+
+        public string GetUserPassword()
+        {
+            return _password;
+        }
+
+
+
+        //public void AddUserToDictionary(IUser newuser, string password)
+        //{
+        //    _dictionaryUsers.Add(newuser, password);
+        //}
+
+        //public Dictionary<IUser, string> GetUserDictionary()
+        //    { return _dictionaryUsers; }
+
+       
+
         
-        public string ReturnLogin
-        {
-            get { return _login; }
-        }
 
-        public string UserPassword(string password)
-        {
-            return _password = password;
-        }
+        //public bool LogowanieDoKonta(string login, string password)
+        //{
+        //    foreach(var iteam in GetUsersList())
+        //    {
+        //        if (Convert.ToString(iteam) == login)
+        //        {
+        //            if(login == _login && password == _password)
+        //            {
+        //                Console.WriteLine("Zalogowałeś się poprawnie");
+        //                return true;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Podałeś zły login lub hasło");
+        //            return false;
 
-        internal void AddUserToList(IUser newuser)
-        {
-            _listUsers.Add(newuser);
-        }
+        //        }
+        //    }
+        //    return false;
+        //}
 
-        public void CreateNewUser()
-        {
-            Console.WriteLine("Podaj imię: ");
-            UserName(Console.ReadLine());
-            Console.WriteLine("Podaj nazwisko: ");
-            UserSurname(Console.ReadLine());
-            Console.WriteLine("Podaje datę urodzenia: ");
-            DateOfBirth(Convert.ToDateTime(Console.ReadLine()));
-            Console.WriteLine("Podaj email: ");
+        //public bool Login(IUser login, string password)
+        //{
+        //    foreach (KeyValuePair<login1 password> in _dictionaryUsers)
+        //    {
 
-            while (IsEmail(UserEmail(Console.ReadLine())) == false)
-            {
-                continue;
-            }
+        //    }
+        //    //{
+        //    //    int i = 1;
+        //    //    if (GetUsersPassword(login1) == password)
+        //    //    {
+        //    //        Console.WriteLine("Zalogowałeś się poprawnie. Zapraszamy do wypożyczania filmów.");
+        //    //        return true;
+        //    //    }
+        //    //}
+        //    return false;
 
-            Console.WriteLine("Podaj login: ");
-            Login(Console.ReadLine());
-            Console.WriteLine("Podaj hasło: ");
-            UserPassword(Console.ReadLine());
-            AddUserToList(new UserData(_login, _userName, _userSurname, _dateOfBirth, _email));
-        }
+        //iteruję foreachem po liście użytkowników, czy mam go na liście
+
+
     }
 }

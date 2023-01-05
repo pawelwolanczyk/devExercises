@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Menu\MenuLogin.cs" />
     <Compile Include="MovieImporter\FileMoviesImporter.cs" />
     <Compile Include="MovieImporter\IMovieImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserAccount\NewUser.cs" />
     <Compile Include="RentalMovies\BluRayMovie.cs" />
     <Compile Include="RentalMovies\DvdMovie.cs" />
     <Compile Include="RentalMovies\IMovie.cs" />

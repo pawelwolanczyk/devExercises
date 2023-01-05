@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AndrzejRental.AndrzejRental_Utils
 {
-    internal class DvdMovie : PhysicalMovie
-    {
+    //internal class DvdMovie : PhysicalMovie
+    //{
        
-    }
+    //}
 }

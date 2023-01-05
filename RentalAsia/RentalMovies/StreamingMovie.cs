@@ -9,18 +9,11 @@ namespace RentalAsia.RentalMovies
      public class StreamingMovie : IMovie
     {
         string _title;
-        private string answerRent;
         public string GetTitle()
         {
             return _title;
         }
-        //public bool DoYouWantRent(DateTime start )
-        //{
-        //    Rental(start);
-        //    return true;
-        //}
-
-        public bool Rental(DateTime start, DateTime end)
+        public bool Rent(DateTime start, DateTime end)
         {
             return true;
             //Console.WriteLine("Posiadamy poszukiwany przez Ciebie film.\n Czy chcesz go wypożyczyć? (tak/nie)");
@@ -47,11 +40,6 @@ namespace RentalAsia.RentalMovies
         public virtual bool IsAvailable()
         {
             return true;
-        }
-
-        public void Rent(DateTime start, IUser user)
-        {
-            throw new NotImplementedException();
         }
 
         public List<IUser> GetUsers()
