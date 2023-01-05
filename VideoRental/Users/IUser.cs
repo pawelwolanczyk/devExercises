@@ -1,28 +1,25 @@
-﻿using AndrzejRental.RentalUtils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VideoRental.RentalManagement;
+using VideoRental.Movies;
 
-namespace AndrzejRental.UserUtils
+namespace VideoRental.Users
 {
     internal interface IUser
     {
-    
         string GetUserName();
 
         string GetPassword();
 
-        float GetPESEL();
+        long GetPESEL();
 
         bool PremiumStatus { get; }
 
-        bool AddToCollection(IMovie movie);
+        bool RentMovie(IMovie movie);
 
-        List<IMovie> GetCollection();
-
-        List<string> GetTitlesInCollection();
-
+        List<IMovie> GetRentedMovies();
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrzejRental.RentalUtils
+namespace VideoRental.Movies
 {
     internal class VhsMovie : MoviePhisical
     {

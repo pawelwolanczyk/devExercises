@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrzejRental.RentalUtils
+namespace VideoRental.Movies
 {
     internal class StreamingMovie : IMovie
     {
@@ -14,15 +14,9 @@ namespace AndrzejRental.RentalUtils
         {
             _title = Title;
         }
-        public string GetTitle()
-        {
-            return _title;
-        }
+        public string Title => _title;
 
-        public bool IsAvailable()
-        {
-            return true;
-        }
+        public bool IsAvailable => true;
 
         public bool Rent(DateTime Start, DateTime endTime)
         {

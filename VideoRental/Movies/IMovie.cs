@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrzejRental.RentalUtils
+namespace VideoRental.Movies
 {
     internal interface IMovie
     {
-        string GetTitle();
+        string Title { get; }
+
+        bool IsAvailable { get; }
 
         bool Rent(DateTime Start, DateTime endTime);
-
-        bool IsAvailable();
-
     }
 }
