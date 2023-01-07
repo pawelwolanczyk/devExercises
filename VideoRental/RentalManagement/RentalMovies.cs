@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,10 +25,13 @@ namespace VideoRental.RentalManagement
 
         public List<string> GetAllMovies()
         {
+            Logger logg = LogManager.GetCurrentClassLogger();
+
             List<string> allMovies = new List<string>();
             foreach (IMovie movie in this)
             {
                 allMovies.Add(movie.Title);
+                logg.Debug("Dodano film do listy wszytskich filmów" + movie.Title);
             }
 
             return allMovies;

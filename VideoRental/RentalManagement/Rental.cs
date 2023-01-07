@@ -8,6 +8,7 @@ using VideoRental.Movies;
 using VideoRental.RentalManagement.RentalMenu;
 using System.Runtime.Remoting;
 using System.Linq.Expressions;
+using NLog;
 
 namespace VideoRental.RentalManagement
 {
@@ -108,6 +109,7 @@ namespace VideoRental.RentalManagement
         private AdminOperation HandleAdminOperation(AdminOperation operation, ref bool adminAlreadyLoggedIn)
         {
             ConsoleAdminMenuHandler menuHandler = new ConsoleAdminMenuHandler();
+            Logger logg = LogManager.GetCurrentClassLogger();
 
             if (operation != AdminOperation.Login && !adminAlreadyLoggedIn)
             {
@@ -123,6 +125,7 @@ namespace VideoRental.RentalManagement
                     break;
                 case AdminOperation.PrintUsers:
                     menuHandler.PrintUsers(_users);
+                    logg.Info("Administartor pobrał listę wszystkich użytkowników");
                     break;
                 case AdminOperation.PrintStartupMovies:
                     menuHandler.PrintStartupMovies(_startupCollection);
@@ -155,7 +158,6 @@ namespace VideoRental.RentalManagement
                         menuHandler.PrintAllMovies(_allMovies);
                         break;
                     case UserOperation.PrintUserData:
-                        menuHandler.PrintUserData(loggedUser);
                         break;
                     case UserOperation.PrintRentedMovies:
                         menuHandler.PrintRentedMovies(loggedUser);

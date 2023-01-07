@@ -20,6 +20,9 @@ namespace VideoRental
             Rental rental = new Rental();
             RentalHelper.InitializeRentalPredefinedData(rental);
 
+            //RentalMovies listmovies = new RentalMovies();
+            //listmovies.GetAllMovies();
+
             rental.StartRental();
         }
     }
