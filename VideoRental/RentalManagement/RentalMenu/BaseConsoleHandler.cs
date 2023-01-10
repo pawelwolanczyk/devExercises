@@ -7,7 +7,7 @@ using VideoRental.Movies;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class BaseConsoleHandler
+    public class BaseConsoleHandler
     {
         internal void PrintStartupMovies(List<IMovie> movies)
         {

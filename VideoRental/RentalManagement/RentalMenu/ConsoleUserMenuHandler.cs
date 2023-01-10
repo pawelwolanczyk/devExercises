@@ -8,23 +8,22 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class ConsoleUserMenuHandler : BaseConsoleHandler
+    public class ConsoleUserMenuHandler : BaseConsoleHandler
     {
-        public IUser CreateUserAccount()
+        public string userName;
+        internal IUser CreateUserAccount()
         {
             IUser user = null;
 
             long pesel;
-            string userName;
             string password;
 
             Console.WriteLine("Zapraszamy do utworzenia konta uzytkownika");
             Console.WriteLine("Wybierz konto: \nS - Konto Standard\nP - Konto PREMIUM (dostajesz na start 2 filmy GRATIS)");
             char accountType = Console.ReadLine()[0];
             Console.Write("Podaj swoja nazwe (login): ");
-            userName = Console.ReadLine();
-            if (userName == "Asia")
-                throw new Exception("Never add a user by name Asia!!! ");
+            GetUserLogin(Console.ReadLine());
+           //tutaj zrobiłam nową metodę do nUnit Test GetUserLogin
             Console.Write("Podaj swoje haslo (dowolny ciag znakow): ");
             password = Console.ReadLine();
             Console.Write("Podaj swoj PESEL (11 cyfr): ");
@@ -36,6 +35,13 @@ namespace VideoRental.RentalManagement.RentalMenu
             Console.ReadKey();
 
             return user;
+        }
+
+        public string GetUserLogin(string login)
+        {
+            if(login == "Asia")
+                throw new Exception("Never add a user by name Asia!!! ");
+            return userName = login;
         }
 
         public string UserLogin()
@@ -66,14 +72,14 @@ namespace VideoRental.RentalManagement.RentalMenu
             throw new InvalidUserCredentialsException();
         }
 
-        public void PrintUserData(IUser user)
+        internal void PrintUserData(IUser user)
         {
             HandleNotLoggedUser(user);
 
             Console.WriteLine(user);
         }
 
-        public void PrintRentedMovies(IUser user)
+        internal void PrintRentedMovies(IUser user)
         {
             HandleNotLoggedUser(user);
 
@@ -85,7 +91,7 @@ namespace VideoRental.RentalManagement.RentalMenu
             Console.ReadKey();
         }
 
-        public string RentMovie(IUser user)
+        internal string RentMovie(IUser user)
         {
             HandleNotLoggedUser(user);
  
