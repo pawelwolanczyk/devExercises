@@ -11,6 +11,8 @@ namespace VideoRental.Users
     internal class UserNormal : IUser
     {
         internal List<IMovie> _ownMovies = new List<IMovie>();
+        private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
 
         private static int _userNormalCount = 0;
         public string _password;
@@ -47,6 +49,7 @@ namespace VideoRental.Users
             if (movie.Rent(DateTime.Now, DateTime.Now.AddDays(1)))
             {
                 _ownMovies.Add(movie);
+                _logger.Info("Wypożyczono " + movie);
                 return true;
             }
 

@@ -10,16 +10,20 @@ namespace VideoRental.RentalManagement.RentalMenu
 {
     internal class ConsoleAdminMenuHandler : BaseConsoleHandler
     {
+        private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
         internal void AdminLogin()
         {
             //it should not be here but inside admin/user class - there should be Login method returning true/false;
             string adminPassword = "admin";
+            
             while (true)
             {
                 Console.WriteLine("PODAJ HASLO ADMINISTRATORA");
                 string pass = Console.ReadLine();
                 if (pass == adminPassword)
                 {
+                    _logger.Debug("Administrator zalogował się.");
                     break;
                 }
             }

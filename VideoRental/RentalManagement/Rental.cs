@@ -8,6 +8,7 @@ using VideoRental.Movies;
 using VideoRental.RentalManagement.RentalMenu;
 using System.Runtime.Remoting;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 
 namespace VideoRental.RentalManagement
 {
@@ -16,7 +17,9 @@ namespace VideoRental.RentalManagement
         private RentalMovies _allMovies = new RentalMovies();
         private RentalMovies _startupCollection = new RentalMovies();
         private RentalUsers _users = new RentalUsers();
-        
+        private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
+
         public void AddMovie(IMovie movie)
         {
             _allMovies.Add(movie);
@@ -41,6 +44,7 @@ namespace VideoRental.RentalManagement
                 return true;
             }
 
+            _logger.Warn("Nie dodano gratisowego filmu dla użytkowników _premium " + movieTitle);
             return false;
         }
 
@@ -146,7 +150,18 @@ namespace VideoRental.RentalManagement
                 switch (operation)
                 {
                     case UserOperation.CreateAccount:
-                        IUser createdUser = menuHandler.CreateUserAccount();
+                        IUser createdUser;
+                        try
+                        {
+                            createdUser = menuHandler.CreateUserAccount();
+                        }
+                        catch (Exception userName)
+                        {
+                            Console.WriteLine("We do not rent movies to users named Asia!!!!");
+                            _logger.Error("We do not rent movies to users named Asia!!!!" + userName.Message);
+                            break;
+                        }
+
                         if (createdUser as UserPremium != null)
                             (createdUser as UserPremium).ProcessStartupCollection(_startupCollection);
                         _users.Add(createdUser);

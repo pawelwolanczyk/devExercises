@@ -23,6 +23,8 @@ namespace VideoRental.RentalManagement.RentalMenu
             char accountType = Console.ReadLine()[0];
             Console.Write("Podaj swoja nazwe (login): ");
             userName = Console.ReadLine();
+            if (userName == "Asia")
+                throw new Exception("Never add a user by name Asia!!! ");
             Console.Write("Podaj swoje haslo (dowolny ciag znakow): ");
             password = Console.ReadLine();
             Console.Write("Podaj swoj PESEL (11 cyfr): ");

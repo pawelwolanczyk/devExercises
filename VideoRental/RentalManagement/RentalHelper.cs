@@ -12,6 +12,7 @@ namespace VideoRental.RentalManagement
 {
     internal static class RentalHelper
     {
+        private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
         internal static void InitializeRentalPredefinedData(Rental rental)
         {
             RentalHelper.InitializePredefinedMoviesList(rental);
@@ -43,17 +44,35 @@ namespace VideoRental.RentalManagement
 
         private static void InitializeStartupCollection(Rental rental)
         {
-            rental.AddMovieToStartupCollection("Garfild");
-            rental.AddMovieToStartupCollection("The Godfather");
+                _logger.Info("Rozpoczęcie próby wręczenia filmów w gratisie dla użytkownika premium");
+                rental.AddMovieToStartupCollection("Garfild");
+                rental.AddMovieToStartupCollection("The Godfather");
         }
 
         private static void InitializePredefinedUsers(Rental rental)
         {
-            rental.AddUser(RentalUserType.StandardUser, "Maciej Zwyczajny", "haslo3", 92111212345);
-            rental.AddUser(RentalUserType.PremiumUser, "Pawel", "haslo", 12345678901);
+            try
+            {
+                rental.AddUser(RentalUserType.StandardUser, "Maciej Zwyczajny", "haslo3", 92111212345);
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine("Make an accurate selection of your user account" + exception.Message);
+                _logger.Error(exception);
+            }
+            try
+            {
+                rental.AddUser(RentalUserType.PremiumUser, "Pawel", "haslo", 12345678901);
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine("Make an accurate selection of your user account" + exception.Message);
+                _logger.Error(exception);
+            }
             rental.AddUser(RentalUserType.PremiumUser, "Andrzej Kaganek", "haslo", 85070712345);
             rental.AddUser(RentalUserType.PremiumUser, "Jan Kowalski", "haslo1", 87020312345);
             rental.AddUser(RentalUserType.PremiumUser, "Arnold Nowak", "haslo2", 98050312345);
+            _logger.Trace("Dodano użytkowników");
         }
     }
 }
