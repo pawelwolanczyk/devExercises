@@ -8,7 +8,7 @@ using VideoRental.Movies;
 
 namespace VideoRental.Users
 {
-    internal interface IUser
+    public interface IUser
     {
         string GetUserName();
 

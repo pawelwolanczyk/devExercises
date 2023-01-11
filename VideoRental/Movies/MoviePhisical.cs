@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    internal class MoviePhisical : IMovie
+    public class MoviePhisical : IMovie
     {
         private static int _numberOfAllPhisicalFilms = 0;
 

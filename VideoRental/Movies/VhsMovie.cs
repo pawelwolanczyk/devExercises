@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    internal class VhsMovie : MoviePhisical
+    public class VhsMovie : MoviePhisical
     {
         public VhsMovie(string title, int number_of_films) : base(title, number_of_films)
         {

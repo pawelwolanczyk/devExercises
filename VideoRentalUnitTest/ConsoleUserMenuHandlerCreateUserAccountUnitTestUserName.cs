@@ -12,14 +12,26 @@ namespace VideoRentalUnitTest
     public class ConsoleUserMenuHandlerCreateUserAccountUnitTestUserName
     {
         [Test]
-        public void GetUserNameFromCreateUserAccountIcanNotAddUserByNameAsia()
+        public void SearchExceptionInCreateUserAccountIfUserNameIsAsia()
         {
             var accountAsia = new ConsoleUserMenuHandler();
 
-            var result = accountAsia.GetUserLogin("Asia");
+            Assert.Throws<Exception>(() => accountAsia.GetUserLogin("Asia"));
+        }
 
-            Assert.ThrowsAsync<Exception>(accountAsia.GetUserLogin();
-           
+        [Test]
+        public void CreateUserAccountIfUserNameIsAsia()//zmieniec nazwe
+        {
+            var accountothers = new ConsoleUserMenuHandler();
+
+            Assert.DoesNotThrow(() => accountothers.GetUserLogin("Andrzej"));
+        }
+        [Test]
+        public void PomyslecNadNazwa()//zmienic nazwe 
+        {
+            var accountothers = new ConsoleUserMenuHandler();
+
+            Assert.IsTrue(accountothers.GetUserLogin("Bartek").Equals("Bartek"));
         }
     }
 }

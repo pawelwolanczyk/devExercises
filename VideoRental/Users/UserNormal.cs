@@ -8,7 +8,7 @@ using VideoRental.Movies;
 
 namespace VideoRental.Users
 {
-    internal class UserNormal : IUser
+    public class UserNormal : IUser
     {
         internal List<IMovie> _ownMovies = new List<IMovie>();
         private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
@@ -19,6 +19,11 @@ namespace VideoRental.Users
         public long _pesel;
         public string _userName;
         internal bool _isPremium;
+
+        public UserNormal()
+        {
+
+        }
 
         public UserNormal(string userName, string password, long pesel)
         {
