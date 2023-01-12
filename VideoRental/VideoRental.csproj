@@ -57,7 +57,6 @@
     <Compile Include="RentalManagement\RentalMenu\ConsoleAdminMenuHandler.cs" />
     <Compile Include="RentalManagement\RentalMenu\ConsoleMenu.cs" />
     <Compile Include="RentalManagement\RentalMenu\IMenu.cs" />
-    <Compile Include="RentalManagement\RentalMenu\MenuHandler.cs" />
     <Compile Include="RentalManagement\RentalMenu\ConsoleUserMenuHandler.cs" />
     <Compile Include="RentalManagement\RentalMovies.cs" />
     <Compile Include="RentalManagement\RentalUsers.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Users
 {
-    internal class UserNotLoggedInException : Exception
+    public class UserNotLoggedInException : Exception
     {
     }
 }

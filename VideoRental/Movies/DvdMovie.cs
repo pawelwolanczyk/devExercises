@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    internal class DvdMovie : MoviePhisical
+    public class DvdMovie : MoviePhisical
     {
         public DvdMovie(string title, int number_of_copies) : base(title, number_of_copies)
         {

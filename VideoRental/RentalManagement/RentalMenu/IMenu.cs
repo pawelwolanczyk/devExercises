@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    enum AppUserType
+    public enum AppUserType
     {
         Unknown,
         Administrator,
         User
     }
 
-    enum RentalUserType
+    public enum RentalUserType
     {
         Unknown,
         StandardUser,
         PremiumUser
     }
 
-    enum AdminOperation
+    public enum AdminOperation
     {
         Login,
         PrintUsers,
@@ -29,7 +29,7 @@ namespace VideoRental.RentalManagement.RentalMenu
         Exit
     }
 
-    enum UserOperation
+    public enum UserOperation
     {
         CreateAccount,
         Login,
@@ -40,7 +40,7 @@ namespace VideoRental.RentalManagement.RentalMenu
         Exit
     }
 
-    internal interface IMenu
+    public interface IMenu
     {
         void InitialMenu();
         AppUserType SelectUserType();

@@ -7,23 +7,23 @@ using VideoRental.Movies;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class BaseConsoleHandler
+    public class BaseConsoleHandler
     {
-        internal void PrintStartupMovies(List<IMovie> movies)
+        public void PrintStartupMovies(List<IMovie> movies)
         {
             Console.WriteLine("--- Lista Kolekcji StartowejPremium:");
 
             PrintMovies(movies);
         }
 
-        internal void PrintAllMovies(List<IMovie> movies)
+        public void PrintAllMovies(List<IMovie> movies)
         {
             Console.WriteLine("--- Lista wszystkich dostępnych filmów:");
 
             PrintMovies(movies);
         }
 
-        internal void PrintExitMessage()
+        public void PrintExitMessage()
         {
             Console.WriteLine("Miłego dnia!");
         }

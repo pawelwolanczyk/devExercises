@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExceptionExample
 {
-    internal class AlaMaKotaException : Exception
+    public class AlaMaKotaException : Exception
     {
         public AlaMaKotaException() : base("Ala ma kota message")
         {

@@ -9,7 +9,7 @@ using VideoRental.Users;
 
 namespace VideoRental.Users
 {
-    internal class UserPremium : UserNormal
+    public class UserPremium : UserNormal
     {
         private static int _userPremiumCount = 0;
         

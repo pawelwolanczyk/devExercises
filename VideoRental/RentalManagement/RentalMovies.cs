@@ -7,7 +7,7 @@ using VideoRental.Movies;
 
 namespace VideoRental.RentalManagement
 {
-    internal class RentalMovies : List<IMovie>
+    public class RentalMovies : List<IMovie>
     {
         public IMovie Find(string movieTitle)
         {

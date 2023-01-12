@@ -10,9 +10,9 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement
 {
-    internal static class RentalHelper
+    public static class RentalHelper
     {
-        internal static void InitializeRentalPredefinedData(Rental rental)
+        public static void InitializeRentalPredefinedData(Rental rental)
         {
             RentalHelper.InitializePredefinedMoviesList(rental);
             RentalHelper.InitializeStartupCollection(rental);

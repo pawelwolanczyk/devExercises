@@ -8,7 +8,7 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class ConsoleMenu : IMenu
+    public class ConsoleMenu : IMenu
     {
         public void InitialMenu()
         {

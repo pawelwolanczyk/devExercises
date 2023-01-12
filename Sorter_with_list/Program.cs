@@ -7,7 +7,7 @@ using UtilsLibrary.Containers;
 
 namespace Sorter_with_list
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

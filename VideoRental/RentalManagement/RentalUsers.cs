@@ -7,7 +7,7 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement
 {
-    internal class RentalUsers : List<IUser>
+    public class RentalUsers : List<IUser>
     {
     }
 }

@@ -8,9 +8,9 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class ConsoleAdminMenuHandler : BaseConsoleHandler
+    public class ConsoleAdminMenuHandler : BaseConsoleHandler
     {
-        internal void AdminLogin()
+        public void AdminLogin()
         {
             //it should not be here but inside admin/user class - there should be Login method returning true/false;
             string adminPassword = "admin";
@@ -25,14 +25,14 @@ namespace VideoRental.RentalManagement.RentalMenu
             }
         }
 
-        internal void PrintUsers(List<IUser> users)
+        public void PrintUsers(List<IUser> users)
         {
             Console.WriteLine("--- Lista uzytkownikow bazowych: ");
             foreach (IUser user in users)
                 Console.WriteLine("   - " + user.GetUserName());
         }
 
-        internal void HandleNotLoggedInAdmin()
+        public void HandleNotLoggedInAdmin()
         {
             Console.WriteLine("Administrator nie jest zalogowany. Musisz się zalogować aby wykonać inne operacje.");
         }

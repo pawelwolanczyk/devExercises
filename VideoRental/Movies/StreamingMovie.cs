@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    internal class StreamingMovie : IMovie
+    public class StreamingMovie : IMovie
     {
         string _title;
 

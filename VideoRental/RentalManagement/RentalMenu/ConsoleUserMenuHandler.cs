@@ -8,7 +8,7 @@ using VideoRental.Users;
 
 namespace VideoRental.RentalManagement.RentalMenu
 {
-    internal class ConsoleUserMenuHandler : BaseConsoleHandler
+    public class ConsoleUserMenuHandler : BaseConsoleHandler
     {
         public IUser CreateUserAccount()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExceptionExample
 {
-    internal class DivideByTwoException : ArithmeticException
+    public class DivideByTwoException : ArithmeticException
     {
     }
 }

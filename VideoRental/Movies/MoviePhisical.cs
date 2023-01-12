@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    internal class MoviePhisical : IMovie
+    abstract public class MoviePhisical : IMovie
     {
         private static int _numberOfAllPhisicalFilms = 0;
 
@@ -24,7 +24,7 @@ namespace VideoRental.Movies
             _numberOfAllPhisicalFilms += number_of_copies;
         }
 
-        internal static int CalculateAllFilms_Static()
+        public static int CalculateAllFilms_Static()
         {
             return _numberOfAllPhisicalFilms;
         }

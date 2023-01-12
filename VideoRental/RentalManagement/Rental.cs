@@ -11,7 +11,7 @@ using System.Linq.Expressions;
 
 namespace VideoRental.RentalManagement
 {
-    internal class Rental
+    public class Rental
     {
         private RentalMovies _allMovies = new RentalMovies();
         private RentalMovies _startupCollection = new RentalMovies();
