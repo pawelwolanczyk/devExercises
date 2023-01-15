@@ -48,10 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BluRayTests.cs" />
+    <Compile Include="MoviePhysicalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserNormalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VideoRental\VideoRental.csproj">
+      <Project>{5a15ad06-1bb7-4950-8da4-f7582af5bef1}</Project>
+      <Name>VideoRental</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
