@@ -12,7 +12,7 @@ namespace VideoRentalUnitTests
     public class MoviePhysicalTest
     {
         [Test]
-        public void MoviePsychical__numberOfAllPhisicalFilms_True()
+        public void MoviePhisical_numberOfAllPhisicalFilms_True()
         {
             //given //when
             BluRayMovie brmovie = new BluRayMovie("Garfild", 2);
@@ -20,6 +20,14 @@ namespace VideoRentalUnitTests
 
             //than
             Assert.True(MoviePhisical.CalculateAllFilms_Static() == 5);
+        }
+
+        [Test]
+        public void MoviePhisical_RentMovieIsTrue()
+        {
+            MoviePhisical moviePhisical = new BluRayMovie("Garfild", 2);
+
+            Assert.IsTrue(moviePhisical.Rent(DateTime.Now, DateTime.Now.AddDays(1)));
         }
     }
 }

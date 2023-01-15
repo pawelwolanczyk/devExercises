@@ -51,6 +51,7 @@
     <Compile Include="BluRayTests.cs" />
     <Compile Include="MoviePhysicalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserNormalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
