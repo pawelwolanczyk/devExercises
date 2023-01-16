@@ -13,10 +13,10 @@ namespace VideoRental.Users
         public List<IMovie> _ownMovies = new List<IMovie>();
 
         private static int _userNormalCount = 0;
-        public string _password;
-        public long _pesel;
-        public string _userName;
-        public bool _isPremium;
+        private string _password;
+        private long _pesel;
+        private string _userName;
+        protected bool _isPremium;
 
         public UserNormal(string userName, string password, long pesel)
         {

@@ -15,28 +15,33 @@ namespace VideoRentalUnitTests
         public void UserNormaGetPasswordIsTrue()
         {
             //given//when
-            UserNormal newuser = new UserNormal("Asia", "Szymek", 05050505555);
+            string password = "Szymek";
+            UserNormal newuser = new UserNormal("Asia", password, 05050505555);
 
             //then
-            Assert.IsTrue(newuser.GetPassword() == newuser._password);
+            Assert.IsTrue(newuser.GetPassword() == password);
         }
+
         [Test]
         public void UserNormalGetUserNameIsTrue()
         {
             //given//when
-            UserNormal newuser = new UserNormal("Asia", "Szymek", 05050505555);
+            string userName = "Asia";
+            UserNormal newuser = new UserNormal(userName, "Szymek", 05050505555);
 
             //then
-            Assert.IsTrue(newuser.GetUserName() == newuser._userName);
+            Assert.IsTrue(newuser.GetUserName() == userName);
         }
+
         [Test]
         public void UserNormalGetPeselIsTrue()
         {
             //given//when
-            UserNormal newuser = new UserNormal("Asia", "Szymek", 05050505555);
+            long pesel = 05050505555;
+            UserNormal newuser = new UserNormal("Asia", "Szymek", pesel);
 
             //then
-            Assert.IsTrue(newuser.GetPESEL() == newuser._pesel);
+            Assert.IsTrue(newuser.GetPESEL() == pesel);
         }
     }
 }
