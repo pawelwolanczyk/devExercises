@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace Sorter_with_list
 {
     internal class Program
     {
+        static readonly string loggerName = "Sorter_with_list_logger";
+
         static void Main(string[] args)
         {
             SortedIntList lista = new SortedIntList();
@@ -17,6 +20,7 @@ namespace Sorter_with_list
 
             do
             {
+                LogManager.GetLogger(loggerName).Debug("Asking for integer");
                 Console.WriteLine("Podaj liczbę całkowitą lub x aby zakończyć");
                 userValue = Console.ReadLine();
                 if (int.TryParse(userValue, out intValue))
@@ -27,6 +31,7 @@ namespace Sorter_with_list
             Console.WriteLine(lista);
             ListIntPrinter.StaticPrint(lista);
             ListIntPrinter x = new ListIntPrinter();
+            LogManager.GetLogger(loggerName).Debug("Printing list");
             x.ObjectPrint(lista);
         }
     }

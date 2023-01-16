@@ -14,7 +14,7 @@ namespace VideoRental
     {
         static void Main(string[] args)
         {
-            Logger log = LogManager.GetCurrentClassLogger();
+            Logger log = LogManager.GetLogger("mojlogger");
             log.Info("Starting Rental console application");
 
             Rental rental = new Rental();

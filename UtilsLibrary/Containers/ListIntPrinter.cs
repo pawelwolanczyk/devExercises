@@ -10,6 +10,7 @@ namespace UtilsLibrary.Containers
     {
         public static void StaticPrint(SortedIntList list)
         {
+            UtilsLogger.GetLogger().Debug("Print list");
             string result = String.Empty;
             ListItem element = list.GetBegin();
 

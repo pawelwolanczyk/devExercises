@@ -13,12 +13,15 @@ namespace UtilsLibrary.Containers
 
         public SortedIntList()
         {
+            UtilsLogger.GetLogger().Debug("List creating");
             _begin = null;
         }
 
         public void Add(int x)
         {
-            if(_begin == null)
+            UtilsLogger.GetLogger().Debug("Adding new item to list");
+
+            if (_begin == null)
             {
                 _begin = new ListItem(x);
                 return;
