@@ -8,6 +8,8 @@ using VideoRental.Movies;
 using VideoRental.RentalManagement.RentalMenu;
 using System.Runtime.Remoting;
 using System.Linq.Expressions;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace VideoRental.RentalManagement
 {
@@ -204,6 +206,15 @@ namespace VideoRental.RentalManagement
             while (incorrectLoginCounter < 3);
 
             return null;
+        }
+
+        public void SerializeMoviesToXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(RentalMovies));
+            using (Stream fs = new FileStream("ListUsers.xml", FileMode.OpenOrCreate))
+            {
+                serializer.Serialize(fs, _allMovies);
+            }
         }
     }
 }

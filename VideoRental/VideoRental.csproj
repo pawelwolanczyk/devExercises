@@ -60,6 +60,7 @@
     <Compile Include="RentalManagement\RentalMenu\ConsoleUserMenuHandler.cs" />
     <Compile Include="RentalManagement\RentalMovies.cs" />
     <Compile Include="RentalManagement\RentalUsers.cs" />
+    <Compile Include="Serializable\SerializeToXml.cs" />
     <Compile Include="Users\InvalidUserCredentialsException.cs" />
     <Compile Include="Users\UserNotLoggedInException.cs" />
     <Compile Include="Users\UserPremium.cs" />

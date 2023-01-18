@@ -15,6 +15,7 @@ namespace VideoRental
         {
             Rental rental = new Rental();
             RentalHelper.InitializeRentalPredefinedData(rental);
+            rental.SerializeMoviesToXml();
 
             rental.StartRental();
         }

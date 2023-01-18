@@ -14,6 +14,12 @@ namespace VideoRental.Movies
         {
             _title = Title;
         }
+
+        public StreamingMovie() 
+        { 
+
+        }
+
         public string Title => _title;
 
         public bool IsAvailable => true;

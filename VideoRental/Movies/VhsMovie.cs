@@ -12,5 +12,10 @@ namespace VideoRental.Movies
         {
 
         }
+
+        public VhsMovie() : base(string.Empty, 0)
+        {
+
+        }
     }
 }

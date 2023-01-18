@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using VideoRental.Movies;
 using VideoRental.RentalManagement.RentalMenu;
 using VideoRental.Users;
+using System.Xml.Serialization;
+using VideoRental.Serializable;
+using System.IO;
 
 namespace VideoRental.RentalManagement
 {

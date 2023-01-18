@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace VideoRental.Movies
 {
     abstract public class MoviePhisical : IMovie
     {
         private static int _numberOfAllPhisicalFilms = 0;
-
+        
         private string _title;
         private int _number_of_copies;
 

@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VideoRental.Movies;
+using System.Data.SqlTypes;
+using System.Xml.Serialization;
+using System.Xml.Schema;
+using System.Xml;
+using VideoRental.Users;
 
 namespace VideoRental.RentalManagement
 {
-    public class RentalMovies : List<IMovie>
+    public class RentalMovies : List<IMovie>, IXmlSerializable
     {
         public IMovie Find(string movieTitle)
         {
@@ -31,6 +36,25 @@ namespace VideoRental.RentalManagement
             }
 
             return allMovies;
+        }
+
+        public XmlSchema GetSchema()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ReadXml(XmlReader reader)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteXml(XmlWriter writer)
+        {
+            foreach (IMovie movie in this)
+            {
+                XmlSerializer movieSerializer = new XmlSerializer(Type.GetType(movie.GetType().FullName));
+                movieSerializer.Serialize(writer, movie); 
+            }
         }
     }
 }
