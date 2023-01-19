@@ -211,7 +211,7 @@ namespace VideoRental.RentalManagement
         public void SerializeMoviesToXml()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(RentalMovies));
-            using (Stream fs = new FileStream("ListUsers.xml", FileMode.OpenOrCreate))
+            using (Stream fs = new FileStream("ListMovies.xml", FileMode.OpenOrCreate))
             {
                 serializer.Serialize(fs, _allMovies);
             }
