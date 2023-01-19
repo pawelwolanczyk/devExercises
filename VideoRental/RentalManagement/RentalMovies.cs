@@ -40,7 +40,7 @@ namespace VideoRental.RentalManagement
 
         public XmlSchema GetSchema()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void ReadXml(XmlReader reader)
@@ -50,10 +50,13 @@ namespace VideoRental.RentalManagement
 
         public void WriteXml(XmlWriter writer)
         {
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add(String.Empty, String.Empty);
+
             foreach (IMovie movie in this)
             {
-                XmlSerializer movieSerializer = new XmlSerializer(Type.GetType(movie.GetType().FullName));
-                movieSerializer.Serialize(writer, movie); 
+                XmlSerializer movieSerializer = new XmlSerializer(movie.GetType());
+                movieSerializer.Serialize(writer, movie, ns);
             }
         }
     }

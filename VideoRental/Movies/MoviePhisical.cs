@@ -14,9 +14,17 @@ namespace VideoRental.Movies
         private string _title;
         private int _number_of_copies;
 
-        public string Title => _title;
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
 
-        public bool IsAvailable => _number_of_copies > 0;
+        public bool IsAvailable
+        {
+            get { return _number_of_copies > 0; }
+            set { }
+        }
 
         public MoviePhisical(string title, int number_of_copies)
         {

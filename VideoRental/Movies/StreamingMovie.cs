@@ -20,9 +20,17 @@ namespace VideoRental.Movies
 
         }
 
-        public string Title => _title;
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
 
-        public bool IsAvailable => true;
+        public bool IsAvailable
+        {
+            get { return true; }
+            set { }
+        }
 
         public bool Rent(DateTime Start, DateTime endTime)
         {
