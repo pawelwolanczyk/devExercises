@@ -8,7 +8,7 @@ namespace VideoRental.Movies
 {
     public interface IMovie
     {
-        string Title { get; }
+        string Title { get; set; }
 
         bool IsAvailable { get; }
 

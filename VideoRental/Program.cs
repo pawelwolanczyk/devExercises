@@ -18,6 +18,7 @@ namespace VideoRental
             rental.SerializeMoviesToXml();
 
             rental.StartRental();
+            rental.ReadMoviesFromXml();
         }
     }
 }
