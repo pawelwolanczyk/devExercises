@@ -7,33 +7,36 @@ using System.Xml.Linq;
 
 namespace UtilsLibrary.Containers
 {
-    public class SortedIntList
+    public class SortedList<T> where T : IComparable
     {
-        ListItem _begin;
+        ListItem<T> _begin;
+        int _count;
 
-        public SortedIntList()
+        public SortedList()
         {
+            _count = 0;
             _begin = null;
         }
 
-        public void Add(int x)
+        public void Add(T x)
         {
+            _count++;
             if(_begin == null)
             {
-                _begin = new ListItem(x);
+                _begin = new ListItem<T>(x);
                 return;
             }
 
-            ListItem element = _begin;
-            ListItem previous = null;
+            ListItem<T> element = _begin;
+            ListItem<T> previous = null;
 
             while (element != null)
             {
-                if (element.GetValue() < x)
+                if (element.GetValue().CompareTo(x) < 0)
                 {
                     if (element._next == null)
                     {
-                        element._next = new ListItem(x);
+                        element._next = new ListItem<T>(x);
                         break;
                     }
                     else
@@ -44,7 +47,7 @@ namespace UtilsLibrary.Containers
                 }
                 else
                 {
-                    ListItem c = new ListItem(x);
+                    ListItem<T> c = new ListItem<T>(x);
                     c._next = element;
                     if (previous != null)
                         previous._next = c;
@@ -59,7 +62,7 @@ namespace UtilsLibrary.Containers
         public override string ToString()
         {
             string result = String.Empty;
-            ListItem element = _begin;
+            ListItem<T> element = _begin;
 
             while (element != null)
             {
@@ -72,9 +75,11 @@ namespace UtilsLibrary.Containers
             return result;
         }
 
-        internal ListItem GetBegin()
+        internal ListItem<T> GetBegin()
         {
             return _begin;
         }
+
+        public int Count => _count;
     }
 }

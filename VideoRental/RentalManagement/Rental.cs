@@ -196,7 +196,7 @@ namespace VideoRental.RentalManagement
 
                     return user;
                 }
-                catch (InvalidUserCredentialsException ex)
+                catch (InvalidUserCredentialsException)
                 {
                     incorrectLoginCounter++;
                 }

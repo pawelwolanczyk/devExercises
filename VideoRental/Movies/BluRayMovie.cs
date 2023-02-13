@@ -10,7 +10,7 @@ namespace VideoRental.Movies
     {
         public BluRayMovie(string title, int number_of_copies) : base(title, number_of_copies)
         {
-
+            Console.WriteLine("Jestem w konstruktorze BRMovie");
         }
     }
 }

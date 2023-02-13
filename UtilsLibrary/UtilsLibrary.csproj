@@ -43,9 +43,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\ListIntPrinter.cs" />
+    <Compile Include="Containers\ListPrinter.cs" />
     <Compile Include="Containers\ListItem.cs" />
-    <Compile Include="Containers\SortedIntList.cs" />
+    <Compile Include="Containers\SortedList.cs" />
     <Compile Include="Geometry\Circle.cs" />
     <Compile Include="Geometry\Rectangle.cs" />
     <Compile Include="Geometry\IShape.cs" />

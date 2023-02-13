@@ -12,5 +12,16 @@ namespace VideoRental.Movies
         {
 
         }
+
+        public VhsMovie(VhsMovie movie) : base(movie)
+        {
+
+        }
+
+
+        public VhsMovie(MoviePhisical movie) : base(movie)
+        {
+
+        }
     }
 }

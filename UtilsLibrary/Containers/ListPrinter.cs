@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Containers
 {
-    public class ListIntPrinter
+    public class ListPrinter<T> where T : IComparable
     {
-        public static void StaticPrint(SortedIntList list)
+        public static void StaticPrint(SortedList<T> list)
         {
             string result = String.Empty;
-            ListItem element = list.GetBegin();
+            ListItem<T> element = list.GetBegin();
 
             while (element != null)
             {
@@ -24,10 +24,10 @@ namespace UtilsLibrary.Containers
             Console.Write(result);
         }
 
-        public void ObjectPrint(SortedIntList list)
+        public void ObjectPrint(SortedList<T> list)
         {
             string result = String.Empty;
-            ListItem element = list.GetBegin();
+            ListItem<T> element = list.GetBegin();
 
             while (element != null)
             {

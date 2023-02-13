@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,12 @@ namespace VideoRental.Movies
         public string Title => _title;
 
         public bool IsAvailable => _number_of_copies > 0;
+
+        public MoviePhisical(MoviePhisical movie)
+        {
+            _title = movie.Title;
+            _number_of_copies = movie._number_of_copies;
+        }
 
         public MoviePhisical(string title, int number_of_copies)
         {
@@ -38,6 +45,17 @@ namespace VideoRental.Movies
             }
 
             return false;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj is IMovie)
+            {
+                IMovie movie = (IMovie)obj;
+                return this.Title.CompareTo(movie.Title);
+            }
+            else
+                throw new InvalidDataException();
         }
     }
 }
