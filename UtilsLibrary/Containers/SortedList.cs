@@ -68,7 +68,7 @@ namespace UtilsLibrary.Containers
             {
                 result += element.GetValue();
                 if (element._next != null)
-                    result += ", ";
+                    result += "\n";
                 element = element._next;
             }
 

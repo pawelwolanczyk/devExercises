@@ -35,7 +35,6 @@ namespace Sorter_with_list
             while (userValue != "x");
 
             Console.WriteLine(lista);
-            ListPrinter<string>.StaticPrint(lista);
         }
 
         private static void FloatsSorter()
@@ -54,8 +53,6 @@ namespace Sorter_with_list
             while (userValue != "x");
 
             Console.WriteLine(lista);
-            ListPrinter<float> x = new ListPrinter<float>();
-            x.ObjectPrint(lista);
         }
 
         private static void IntsSorter()
@@ -74,8 +71,6 @@ namespace Sorter_with_list
             while (userValue != "x");
 
             Console.WriteLine(lista);
-            ListPrinter<int> x = new ListPrinter<int>();
-            x.ObjectPrint(lista);
         }
     }
 }

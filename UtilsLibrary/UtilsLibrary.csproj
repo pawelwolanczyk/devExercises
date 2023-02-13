@@ -43,7 +43,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\ListPrinter.cs" />
     <Compile Include="Containers\ListItem.cs" />
     <Compile Include="Containers\SortedList.cs" />
     <Compile Include="Geometry\Circle.cs" />
