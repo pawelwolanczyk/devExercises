@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace UtilsLibrary.Containers
 {
-    public class SortedList<T> where T : IComparable
+    public class SortedList<T> : IEnumerable<T> where T : IComparable
     {
         ListItem<T> _begin;
         int _count;
@@ -80,6 +82,47 @@ namespace UtilsLibrary.Containers
             return _begin;
         }
 
+        public T this[int index]
+        {
+            get
+            {
+                if (index >= _count)
+                    throw new IndexOutOfRangeException();
+
+                return GetItem(index);
+            }
+        }
+
         public int Count => _count;
+
+        private T GetItem(int index)
+        {
+            int itemIdx = 0;
+            ListItem<T> element = _begin;
+
+            while (element != null && itemIdx < index)
+            {
+                element = element._next;
+                ++itemIdx;
+            }
+
+            return element.GetValue();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            ListItem<T> element = _begin;
+
+            while (element != null)
+            {
+                yield return element.GetValue();
+                element = element._next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
     }
 }

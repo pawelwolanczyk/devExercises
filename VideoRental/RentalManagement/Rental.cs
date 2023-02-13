@@ -54,12 +54,6 @@ namespace VideoRental.RentalManagement
 
             return startListTitles;
         }
-
-        public List<IMovie> GetStartupCollection()
-        {
-            return _startupCollection;
-        }
-
         public IUser FindUser(string userName)
         {
             for (int i = 0; i < _users.Count; i++)

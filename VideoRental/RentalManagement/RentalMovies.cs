@@ -8,7 +8,7 @@ using VideoRental.Movies;
 
 namespace VideoRental.RentalManagement
 {
-    public class RentalMovies : List<IMovie>
+    public class RentalMovies : SortedList<IMovie>
     {
         public IMovie Find(string movieTitle)
         {
@@ -21,17 +21,6 @@ namespace VideoRental.RentalManagement
             }
 
             return null;
-        }
-
-        public List<string> GetAllMovies()
-        {
-            List<string> allMovies = new List<string>();
-            foreach (IMovie movie in this)
-            {
-                allMovies.Add(movie.Title);
-            }
-
-            return allMovies;
         }
     }
 }

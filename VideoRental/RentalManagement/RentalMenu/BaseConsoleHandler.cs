@@ -9,14 +9,14 @@ namespace VideoRental.RentalManagement.RentalMenu
 {
     public class BaseConsoleHandler
     {
-        public void PrintStartupMovies(List<IMovie> movies)
+        public void PrintStartupMovies(RentalMovies movies)
         {
             Console.WriteLine("--- Lista Kolekcji StartowejPremium:");
 
             PrintMovies(movies);
         }
 
-        public void PrintAllMovies(List<IMovie> movies)
+        public void PrintAllMovies(RentalMovies movies)
         {
             Console.WriteLine("--- Lista wszystkich dostępnych filmów:");
 
@@ -28,7 +28,7 @@ namespace VideoRental.RentalManagement.RentalMenu
             Console.WriteLine("Miłego dnia!");
         }
 
-        private void PrintMovies(List<IMovie> movies)
+        private void PrintMovies(RentalMovies movies)
         {
             foreach (IMovie movie in movies)
                 Console.WriteLine("   - " + movie.Title);
