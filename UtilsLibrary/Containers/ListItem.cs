@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace UtilsLibrary.Containers
 {
-    public class ListItem : Object
+    public class ListItem<T> : Object
     {
-        private int _value;
-        public ListItem _next;
+        private T _value;
+        public ListItem<T> _next;
 
-        public ListItem(int a)
+        public ListItem(T a)
         {
             _value = a;
             _next = null;
         }
 
-        public int GetValue()
+        public T GetValue()
         {
             return _value;
         }

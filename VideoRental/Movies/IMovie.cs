@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoRental.Movies
 {
-    public interface IMovie
+    public interface IMovie : IComparable
     {
         string Title { get; }
 

@@ -13,14 +13,14 @@ namespace VideoRental.Users
     {
         private static int _userPremiumCount = 0;
         
-        public UserPremium(string userName, string password, long pesel, List<IMovie> startupCollection) : base(userName, password, pesel)
+        public UserPremium(string userName, string password, long pesel, RentalMovies startupCollection) : base(userName, password, pesel)
         {
             _isPremium = true;
             _userPremiumCount += 1;
             ProcessStartupCollection(startupCollection);
         }
 
-        public void ProcessStartupCollection(List<IMovie> startupCollection)
+        public void ProcessStartupCollection(RentalMovies startupCollection)
         {
             if (startupCollection == null)
                 return;

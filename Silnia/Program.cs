@@ -13,14 +13,13 @@ namespace Silnia
         {
             Console.WriteLine("Podaj liczbę całkowitą dla której chcesz obliczyć silnię: ");
             long i = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine(Silnia(i));
             Console.WriteLine(Silnia(i));
             Console.ReadKey();
         }
+
         static long Silnia(long j)
         {
-
-            if (  j == 1 )
+            if (j == 1)
             {
                 return 1;
             }
