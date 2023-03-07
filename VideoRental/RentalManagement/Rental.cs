@@ -10,6 +10,7 @@ using System.Runtime.Remoting;
 using System.Linq.Expressions;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
 
 namespace VideoRental.RentalManagement
 {
@@ -18,7 +19,7 @@ namespace VideoRental.RentalManagement
         private RentalMovies _allMovies = new RentalMovies();
         private RentalMovies _startupCollection = new RentalMovies();
         private RentalUsers _users = new RentalUsers();
-        
+
         public void AddMovie(IMovie movie)
         {
             _allMovies.Add(movie);
@@ -217,12 +218,72 @@ namespace VideoRental.RentalManagement
             }
         }
 
+<<<<<<< HEAD
         public void DeSerializeMoviesFromXml()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(RentalMovies));
             using (Stream fsa = new FileStream("ListMovies.xml",FileMode.Open))
             {
                 _allMovies = (RentalMovies)deserializer.Deserialize(fsa);
+=======
+        public void ReadMoviesFromXml()
+        {
+            Stream fs = new FileStream("ListMovies.xml", FileMode.Open);
+            XmlReader reader = XmlReader.Create(fs);
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    IMovie movie = null;
+                    switch (reader.Name)
+                    {
+                        case "BluRayMovie":
+                            movie = new BluRayMovie();
+                            break;
+                        case "VhsMovie":
+                            movie = new VhsMovie();
+                            break;
+                        case "DvdMovie":
+                            movie = new DvdMovie();
+                            break;
+                        case "StreamingMovie":
+                            movie = new StreamingMovie();
+                            break;
+                        case "RentalMovies":
+                            break;
+                        default:
+                            //log error
+                            break;
+                    }
+
+                    if (movie != null)
+                        ReadMovie(reader, movie);
+                }
+            }
+
+            reader.Close();
+        }
+
+        private void ReadMovie(XmlReader reader, IMovie movie)
+        {
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "Title":
+                            reader.Read();
+                            movie.Title = reader.Value;
+                            break;
+                        case "IsAvailable":
+                            reader.Read();
+                            break;
+                    }
+                }
+                else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == movie.GetType().Name)
+                    return;
+>>>>>>> 4300d2492999b97e6b0b7ad80689eafe64485792
             }
         }
     }

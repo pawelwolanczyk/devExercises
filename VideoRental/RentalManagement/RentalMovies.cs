@@ -45,7 +45,6 @@ namespace VideoRental.RentalManagement
 
         public void ReadXml(XmlReader reader)
         {
-            throw new NotImplementedException();
         }
 
         public void WriteXml(XmlWriter writer)
