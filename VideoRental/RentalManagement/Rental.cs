@@ -216,5 +216,15 @@ namespace VideoRental.RentalManagement
                 serializer.Serialize(fs, _allMovies);
             }
         }
+
+        public void DeSerializeMoviesFromXml()
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(RentalMovies));
+            using (Stream fsa = new FileStream("ListMovies.xml",FileMode.Open))
+            {
+                _allMovies = (RentalMovies)deserializer.Deserialize(fsa);
+            }
+        }
     }
 }
+
