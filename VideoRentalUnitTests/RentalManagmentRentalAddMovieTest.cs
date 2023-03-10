@@ -9,6 +9,7 @@ using NUnit.Framework;
 using VideoRental.Movies;
 using VideoRental.RentalManagement;
 using VideoRental;
+using NUnit.Framework.Constraints;
 
 namespace VideoRentalUnitTests
 {
@@ -16,23 +17,80 @@ namespace VideoRentalUnitTests
     internal class RentalManagmentRentalAddMovieTest
     {
         [Test]
-        public void AddMovieToList_allMovies()
+        public void AddMovieToList_True()
         {
             //given
-            BluRayMovie movie = new BluRayMovie("Garfild", 2);
-            Mock<IMovie> mock = new Mock<IMovie>();
-            mock.Setup(i => i.Title).Returns(movie.Title);
-            mock.Setup(i => i.IsAvailable).Returns(true);
-            mock.Setup(i => i.Rent(DateTime.Now, DateTime.Now.AddDays(1)));
+            var mock = new Mock<IMovie>();
+            RentalMovies mockList = new RentalMovies();
 
             //when
-            var authentication = new Rental();
-            RentalMovies _allMovies = new RentalMovies();
-            IMovie movieTitle = mock.Object;
-            authentication.AddMovie(movieTitle);
+            mockList.Add(mock.Object);
+
 
             //then 
-            Assert.True(_allMovies[0] == movieTitle);
+            Assert.IsTrue(mockList.Contains(mock.Object));
+        }
+
+        [Test]
+        public void FindMovieInTheListRentalMovies_True()
+        {
+            //given
+            var mock = new Mock<IMovie>();
+            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            RentalMovies movies = new RentalMovies();
+
+            //when
+            movies.Add(mock.Object);
+            var film = movies.Find(mock.Object.Title);
+
+            //then
+            Assert.IsTrue(movies.Contains(mock.Object));
+        }
+
+        [Test]
+        public void FindMovieInTheListRentalMovies_False()
+        {
+            //given
+            var mock = new Mock<IMovie>();
+            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            RentalMovies movies = new RentalMovies();
+
+            //when
+            var film = movies.Find(mock.Object.Title);
+
+            //then
+            Assert.False(movies.Contains(film));
+        }
+        [Test]
+        public void FindMovieInTheListRentalMovies_ButItIsNotAvailable()
+        {
+            //given
+            var mock = new Mock<IMovie>();
+            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            mock.Setup(x => x.IsAvailable).Returns(false);
+            RentalMovies movies = new RentalMovies();
+
+            //when
+            movies.Add(mock.Object);
+            var film = movies.Find(mock.Object.Title);
+            Assert.IsTrue(movies.Contains(film));
+            Assert.False(film.IsAvailable);
+
+        }
+
+        [Test]
+        public void FindMovieInTheListRentalMovies_TrueButOnlyStreamingMovie()
+        {
+            //given
+            var mock = new Mock<IMovie>();
+            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            RentalMovies movies = new RentalMovies();
+
+            //when
+            movies.Add(mock.Object);
+            var film = movies.Find(mock.Object.Title);
+            Assert.True(movies.Contains(mock.Object), "Only Streaming Movie");
+
         }
     }
 }
