@@ -16,63 +16,76 @@ namespace VideoRentalUnitTests
     [TestFixture]
     internal class RentalManagmentRentalAddMovieTest
     {
+        private RentalMovies _rentalMovies;
+        private IMovie _mock;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _rentalMovies = new RentalMovies();
+            string movieName = "Garfild";
+            Mock<IMovie> internalMock = new Mock<IMovie>();
+            internalMock.Setup(x => x.Title).Returns(movieName);
+            _mock = internalMock.Object;
+        }
+
         [Test]
-        public void AddMovieToList_True()
+        public void AddMovieToList_MovieExist()
         {
             //given
-            var mock = new Mock<IMovie>();
-            RentalMovies mockList = new RentalMovies();
-
-            //when
-            mockList.Add(mock.Object);
-
+            _rentalMovies.Add(_mock);
 
             //then 
-            Assert.IsTrue(mockList.Contains(mock.Object));
+            Assert.IsTrue(_rentalMovies.Contains(_mock));
         }
 
         [Test]
         public void FindMovieInTheListRentalMovies_True()
         {
             //given
-            var mock = new Mock<IMovie>();
-            mock.Setup(x => x.Title).Returns(mock.Object.Title);
-            RentalMovies movies = new RentalMovies();
+            string movieName = "Garfild";
 
             //when
-            movies.Add(mock.Object);
-            var film = movies.Find(mock.Object.Title);
+            _rentalMovies.Add(_mock);
+            var film = _rentalMovies.Find(movieName);
 
             //then
-            Assert.IsTrue(movies.Contains(mock.Object));
+            Assert.IsTrue(_mock.Title == film.Title);
+            Assert.AreEqual(movieName, film.Title);
         }
 
         [Test]
         public void FindMovieInTheListRentalMovies_False()
         {
             //given
+            string moviesName = "Garfild";
             var mock = new Mock<IMovie>();
-            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            mock.Setup(x => x.Title).Returns(moviesName);
             RentalMovies movies = new RentalMovies();
 
             //when
-            var film = movies.Find(mock.Object.Title);
+            movies.Add(mock.Object);
+            var film = movies.Find("Blondynk w koszarach");
 
             //then
-            Assert.False(movies.Contains(film));
+            Assert.IsNull(film);
         }
+
         [Test]
         public void FindMovieInTheListRentalMovies_ButItIsNotAvailable()
         {
             //given
+            string movieName = "Garfild";
             var mock = new Mock<IMovie>();
-            mock.Setup(x => x.Title).Returns(mock.Object.Title);
+            mock.Setup(x => x.Title).Returns(movieName);
             mock.Setup(x => x.IsAvailable).Returns(false);
             RentalMovies movies = new RentalMovies();
 
             //when
             movies.Add(mock.Object);
-            var film = movies.Find(mock.Object.Title);
+            var film = movies.Find("Garfild");
+
+            //then
             Assert.IsTrue(movies.Contains(film));
             Assert.False(film.IsAvailable);
 
