@@ -7,14 +7,38 @@ using System.Threading.Tasks;
 
 namespace Silnia
 {
+    public class Test : IDisposable
+    {
+        private string _name;
+
+        public Test(string name)
+        {
+            _name = name;
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
+    
+        public void Dispose()
+        {
+            Console.WriteLine("Test disposing");
+        }
+    }
+
     public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Podaj liczbę całkowitą dla której chcesz obliczyć silnię: ");
-            long i = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(Silnia(i));
-            Console.ReadKey();
+            using(Test test = new Test("Ala"))
+            {
+                Console.WriteLine(test.Name);
+                Console.WriteLine("Podaj liczbę całkowitą dla której chcesz obliczyć silnię: ");
+                long i = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(Silnia(i));
+                Console.ReadKey();
+            }
         }
 
         static long Silnia(long j)
