@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRentalUnitTests", "Vid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsNullableTypesCastings", "StringsNullableTypesCastings\StringsNullableTypesCastings.csproj", "{253C6A80-50B8-48C6-BB59-91ADC520401F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{593A50A0-6F68-4E8D-BEB6-98963720204E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{253C6A80-50B8-48C6-BB59-91ADC520401F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{253C6A80-50B8-48C6-BB59-91ADC520401F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{253C6A80-50B8-48C6-BB59-91ADC520401F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593A50A0-6F68-4E8D-BEB6-98963720204E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593A50A0-6F68-4E8D-BEB6-98963720204E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593A50A0-6F68-4E8D-BEB6-98963720204E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593A50A0-6F68-4E8D-BEB6-98963720204E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
