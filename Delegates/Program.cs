@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Delegates
 {
+    public delegate void DelSaveResult<T>(T x);
+
     public class Program
     {
         private static Logger _log = LogManager.GetCurrentClassLogger();
-
-        public delegate void DelSaveResult(int x);
 
         public static void PrintOnConsole(int consoleMsg)
         {
@@ -30,52 +30,96 @@ namespace Delegates
 
         static void Main(string[] args)
         {
-            IPrinter x = new FilePrinter();
-            x.Printer.Print(0);
+            //JustDelegates();
+
+            GoWithLINQ();
+        }
+
+        private static void GoWithLINQ()
+        {
+            List<int> listOfInts = new List<int>();
+
+            listOfInts.Add(1);
+            listOfInts.Add(2);
+            listOfInts.Add(3);
+            listOfInts.Add(4);
+            listOfInts.Add(5);
+            listOfInts.Add(6);
+
+            IEnumerable<int> result = listOfInts.Where(IsEval);
+
+            foreach (int i in result)
+                Console.WriteLine(i);
+
+            List<int> resultList = result.ToList();
+            for(int i = 0; i < resultList.Count; i++)
+                Console.WriteLine(resultList[i]);
+        }
+
+        private static bool IsEval(int x)
+        {
+            return (x % 2) == 0;
+        }
+
+        private static void JustDelegates()
+        {
             //var x = new DelSaveResult(PrintOnConsole);
 
-            Console.WriteLine("Gdzie chcesz logowac? (c/f)");
+            Console.WriteLine("Gdzie chcesz logowac? (c/f/a)");
             string ans = Console.ReadLine();
             //if (ans[0] == 'c')
             //    Process(2, 3, PrintOnConsole);
             //else if (ans[0] == 'f')
             //    Process(2, 3, LogMessage);
 
-            DelSaveResult del = null;
+            DelSaveResult<int> del = null;
             if (ans[0] == 'c')
-                del = new DelSaveResult(PrintOnConsole);
+                del = new DelSaveResult<int>(PrintOnConsole);
             else if (ans[0] == 'f')
-                del = new DelSaveResult(LogMessage);
+                del = new DelSaveResult<int>(LogMessage);
+            else if (ans[0] == 'a')
+            {
+                del += PrintOnConsole;
+                del += LogMessage;
+            }
 
             Process(2, 3, del);
 
+            del -= LogMessage;
+
+            Process(3, 4, del);
+
+            PrintSum(Sum);
         }
 
-        public static void Process(int a, int b, DelSaveResult output)
+        public static void Process(int a, int b, DelSaveResult<int> output)
         {
             output(a + b);
         }
 
-        public static void Process(int a, int b, IPrinter output)
+        public static int Sum(int a, int b)
         {
-            output.Print(a + b);
+            return a + b;
         }
 
-        public interface IPrinter
+        public static void PrintSum(Func<int, int, int> x)
         {
-            IPrinter Printer { get; set; }
-
-            void Print(int x);
+            Console.WriteLine(x(1, 2));
         }
 
-        public class FilePrinter : IPrinter
+        public static void PrintSum2(Func<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> x)
         {
-            public IPrinter Printer { get; set; }
+            Console.WriteLine(x(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16));
+        }
 
-            public void Print(int x)
-            {
-                _log.Info(x);
-            }
+        public static void PrintSum3(Action<int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int> x)
+        {
+            x(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+        }
+
+        public static void AlaMaKota(Func<double> x)
+        {
+            Console.WriteLine(x());
         }
     }
 }
